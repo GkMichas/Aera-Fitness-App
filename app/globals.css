@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  --aera-ink: #171717;
+  --aera-ivory: #f7f5f1;
+  --aera-surface: #ffffff;
+  --aera-stone: #e9e6e0;
+  --aera-forest: #24463a;
+  --aera-sage: #8fa99a;
+  --aera-terracotta: #e6533a;
+  --aera-sand: #d9c7aa;
+  --aera-recovery-blue: #6f8792;
+  --aera-success: #3f7d5a;
+  --aera-warning: #b8863b;
+  --aera-critical: #b9433d;
+  --aera-border: rgba(23,23,23,.14);
+}
+
+* { box-sizing: border-box; }
+html { background: var(--aera-ivory); }
+body {
+  margin: 0;
+  color: var(--aera-ink);
+  background: var(--aera-ivory);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+button, input, select, textarea { font: inherit; }
+a { color: inherit; text-decoration: none; }
+::selection { background: var(--aera-sand); color: var(--aera-ink); }
+
+.aera-focus:focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--aera-forest) 35%, transparent);
+  outline-offset: 3px;
+}
+
+.aera-grid-bg {
+  background-image: radial-gradient(circle at 1px 1px, rgba(23,23,23,.055) 1px, transparent 0);
+  background-size: 24px 24px;
+}
