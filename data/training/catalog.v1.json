@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "equipment": [
+    { "id": "bodyweight", "name": "Bodyweight", "category": "bodyweight" },
+    { "id": "mat", "name": "Exercise mat", "category": "accessory" },
+    { "id": "dumbbells", "name": "Dumbbells", "category": "free_weight" },
+    { "id": "bench", "name": "Bench", "category": "station" },
+    { "id": "resistance-band", "name": "Resistance band", "category": "resistance" },
+    { "id": "barbell", "name": "Barbell", "category": "free_weight" }
+  ],
+  "muscles": [
+    { "id": "chest", "name": "Chest", "region": "upper" },
+    { "id": "back", "name": "Back", "region": "upper" },
+    { "id": "shoulders", "name": "Shoulders", "region": "upper" },
+    { "id": "biceps", "name": "Biceps", "region": "upper" },
+    { "id": "triceps", "name": "Triceps", "region": "upper" },
+    { "id": "quadriceps", "name": "Quadriceps", "region": "lower" },
+    { "id": "hamstrings", "name": "Hamstrings", "region": "lower" },
+    { "id": "glutes", "name": "Glutes", "region": "lower" },
+    { "id": "calves", "name": "Calves", "region": "lower" },
+    { "id": "core", "name": "Core", "region": "core" }
+  ],
+  "movementPatterns": [
+    { "id": "horizontal-push", "name": "Horizontal push", "description": "Pressing resistance away from the torso." },
+    { "id": "horizontal-pull", "name": "Horizontal pull", "description": "Pulling resistance toward the torso." },
+    { "id": "vertical-push", "name": "Vertical push", "description": "Pressing resistance overhead." },
+    { "id": "squat", "name": "Squat", "description": "Knee-dominant lower-body movement." },
+    { "id": "hinge", "name": "Hip hinge", "description": "Hip-dominant movement with a stable spine." },
+    { "id": "lunge", "name": "Lunge", "description": "Single-leg or split-stance lower-body movement." },
+    { "id": "isolation", "name": "Isolation", "description": "Single-joint accessory movement." },
+    { "id": "anti-extension", "name": "Anti-extension", "description": "Core stabilization resisting spinal extension." },
+    { "id": "anti-lateral-flexion", "name": "Anti-lateral flexion", "description": "Core stabilization resisting side bending." }
+  ],
+  "exercises": [
+    {
+      "id": "ex_push_up", "slug": "push-up", "name": "Push-up", "summary": "A bodyweight horizontal press for chest, shoulders and triceps.", "difficulty": "beginner", "movementPatternId": "horizontal-push", "equipmentIds": ["bodyweight"], "primaryMuscleIds": ["chest"], "secondaryMuscleIds": ["shoulders", "triceps", "core"], "mediaId": "TRAINING_PUSHUP", "instructions": ["Place hands just outside shoulder width and brace the trunk.", "Lower the chest with elbows angled slightly back.", "Press the floor away while keeping the body in one line."], "coachingCues": ["Ribs down", "Push the floor away"], "cautionTags": ["wrist-load", "shoulder-load"], "relations": [{ "exerciseId": "ex_incline_push_up", "kind": "regression" }, { "exerciseId": "ex_dumbbell_bench_press", "kind": "alternative" }]
+    },
+    {
+      "id": "ex_incline_push_up", "slug": "incline-push-up", "name": "Incline Push-up", "summary": "A reduced-load push-up performed against a stable raised surface.", "difficulty": "beginner", "movementPatternId": "horizontal-push", "equipmentIds": ["bodyweight", "bench"], "primaryMuscleIds": ["chest"], "secondaryMuscleIds": ["shoulders", "triceps"], "mediaId": "TRAINING_INCLINE_PUSHUP", "instructions": ["Set hands on a stable bench.", "Keep a straight line from head to heel.", "Lower under control and press away."], "coachingCues": ["Brace before moving", "Keep elbows soft"], "cautionTags": ["wrist-load"], "relations": [{ "exerciseId": "ex_push_up", "kind": "progression" }]
+    },
+    {
+      "id": "ex_dumbbell_bench_press", "slug": "dumbbell-bench-press", "name": "Dumbbell Bench Press", "summary": "A stable horizontal press with independent dumbbell loading.", "difficulty": "intermediate", "movementPatternId": "horizontal-push", "equipmentIds": ["dumbbells", "bench"], "primaryMuscleIds": ["chest"], "secondaryMuscleIds": ["shoulders", "triceps"], "mediaId": "TRAINING_DUMBBELL_BENCH_PRESS", "instructions": ["Set shoulder blades against the bench.", "Lower dumbbells beside the chest.", "Press up without letting shoulders roll forward."], "coachingCues": ["Feet planted", "Wrists stacked"], "cautionTags": ["shoulder-load"], "relations": [{ "exerciseId": "ex_push_up", "kind": "alternative" }]
+    },
+    {
+      "id": "ex_dumbbell_row", "slug": "dumbbell-row", "name": "Dumbbell Row", "summary": "A supported single-arm row for the back and biceps.", "difficulty": "intermediate", "movementPatternId": "horizontal-pull", "equipmentIds": ["dumbbells", "bench"], "primaryMuscleIds": ["back"], "secondaryMuscleIds": ["biceps", "core"], "mediaId": "TRAINING_DUMBBELL_ROW", "instructions": ["Hinge forward, support the free hand and keep the spine neutral.", "Pull the dumbbell to the hip with the elbow close.", "Lower under control without rotating the torso."], "coachingCues": ["Flat back", "Pull to the hip"], "cautionTags": ["low-back-load"], "relations": [{ "exerciseId": "ex_band_row", "kind": "regression" }]
+    },
+    {
+      "id": "ex_band_row", "slug": "band-row", "name": "Band Row", "summary": "A scalable horizontal pull using elastic resistance.", "difficulty": "beginner", "movementPatternId": "horizontal-pull", "equipmentIds": ["resistance-band"], "primaryMuscleIds": ["back"], "secondaryMuscleIds": ["biceps"], "mediaId": "TRAINING_BAND_ROW", "instructions": ["Anchor the band securely at torso height.", "Brace and pull both hands toward the ribs.", "Return slowly without shrugging."], "coachingCues": ["Long neck", "Squeeze shoulder blades"], "cautionTags": ["secure-band-anchor"], "relations": [{ "exerciseId": "ex_dumbbell_row", "kind": "progression" }]
+    },
+    {
+      "id": "ex_shoulder_press", "slug": "dumbbell-shoulder-press", "name": "Dumbbell Shoulder Press", "summary": "An overhead press for shoulders and triceps.", "difficulty": "intermediate", "movementPatternId": "vertical-push", "equipmentIds": ["dumbbells"], "primaryMuscleIds": ["shoulders"], "secondaryMuscleIds": ["triceps", "core"], "mediaId": "TRAINING_SHOULDER_PRESS", "instructions": ["Start with dumbbells at shoulder height.", "Brace the trunk and press overhead.", "Lower smoothly to the start."], "coachingCues": ["Ribs down", "Finish tall"], "cautionTags": ["overhead-shoulder-load"], "relations": []
+    },
+    {
+      "id": "ex_lateral_raise", "slug": "lateral-raise", "name": "Lateral Raise", "summary": "A shoulder isolation exercise using light dumbbells.", "difficulty": "beginner", "movementPatternId": "isolation", "equipmentIds": ["dumbbells"], "primaryMuscleIds": ["shoulders"], "secondaryMuscleIds": [], "mediaId": "TRAINING_LATERAL_RAISE", "instructions": ["Hold dumbbells by the sides with soft elbows.", "Raise arms to roughly shoulder height.", "Lower slowly without swinging."], "coachingCues": ["Lead with elbows", "Use control"], "cautionTags": ["shoulder-load"], "relations": []
+    },
+    {
+      "id": "ex_biceps_curl", "slug": "biceps-curl", "name": "Biceps Curl", "summary": "A dumbbell elbow-flexion exercise for the biceps.", "difficulty": "beginner", "movementPatternId": "isolation", "equipmentIds": ["dumbbells"], "primaryMuscleIds": ["biceps"], "secondaryMuscleIds": [], "mediaId": "TRAINING_BICEPS_CURL", "instructions": ["Stand tall with arms by the sides.", "Curl without moving the upper arms.", "Lower fully under control."], "coachingCues": ["Elbows still", "No swing"], "cautionTags": ["elbow-load"], "relations": []
+    },
+    {
+      "id": "ex_triceps_extension", "slug": "triceps-extension", "name": "Triceps Extension", "summary": "An overhead dumbbell extension for the triceps.", "difficulty": "beginner", "movementPatternId": "isolation", "equipmentIds": ["dumbbells"], "primaryMuscleIds": ["triceps"], "secondaryMuscleIds": ["shoulders"], "mediaId": "TRAINING_TRICEPS_EXTENSION", "instructions": ["Hold one dumbbell overhead.", "Bend elbows while keeping upper arms steady.", "Extend without arching the lower back."], "coachingCues": ["Elbows forward", "Ribs down"], "cautionTags": ["elbow-load", "overhead-shoulder-load"], "relations": []
+    },
+    {
+      "id": "ex_bodyweight_squat", "slug": "bodyweight-squat", "name": "Bodyweight Squat", "summary": "A foundational knee-dominant lower-body exercise.", "difficulty": "beginner", "movementPatternId": "squat", "equipmentIds": ["bodyweight"], "primaryMuscleIds": ["quadriceps", "glutes"], "secondaryMuscleIds": ["hamstrings", "core"], "mediaId": "TRAINING_SQUAT", "instructions": ["Stand around shoulder width and brace.", "Sit down between the hips to a comfortable depth.", "Drive through the feet to stand."], "coachingCues": ["Knees track toes", "Whole foot down"], "cautionTags": ["knee-load"], "relations": [{ "exerciseId": "ex_goblet_squat", "kind": "progression" }]
+    },
+    {
+      "id": "ex_goblet_squat", "slug": "goblet-squat", "name": "Goblet Squat", "summary": "A front-loaded squat using one dumbbell.", "difficulty": "intermediate", "movementPatternId": "squat", "equipmentIds": ["dumbbells"], "primaryMuscleIds": ["quadriceps", "glutes"], "secondaryMuscleIds": ["core"], "mediaId": "TRAINING_GOBLET_SQUAT", "instructions": ["Hold a dumbbell close to the chest.", "Squat to a controlled, comfortable depth.", "Stand while keeping the torso braced."], "coachingCues": ["Stay tall", "Drive the floor away"], "cautionTags": ["knee-load", "low-back-load"], "relations": [{ "exerciseId": "ex_bodyweight_squat", "kind": "regression" }]
+    },
+    {
+      "id": "ex_reverse_lunge", "slug": "reverse-lunge", "name": "Reverse Lunge", "summary": "A split-stance lower-body exercise with a backward step.", "difficulty": "intermediate", "movementPatternId": "lunge", "equipmentIds": ["bodyweight"], "primaryMuscleIds": ["quadriceps", "glutes"], "secondaryMuscleIds": ["hamstrings", "core"], "mediaId": "TRAINING_REVERSE_LUNGE", "instructions": ["Step one foot back into a stable stance.", "Lower both knees to a comfortable range.", "Push through the front foot to return."], "coachingCues": ["Front knee tracks toes", "Stay balanced"], "cautionTags": ["knee-load", "balance-demand"], "relations": []
+    },
+    {
+      "id": "ex_romanian_deadlift", "slug": "romanian-deadlift", "name": "Dumbbell Romanian Deadlift", "summary": "A loaded hip hinge for hamstrings and glutes.", "difficulty": "intermediate", "movementPatternId": "hinge", "equipmentIds": ["dumbbells"], "primaryMuscleIds": ["hamstrings", "glutes"], "secondaryMuscleIds": ["back", "core"], "mediaId": "TRAINING_RDL", "instructions": ["Hold dumbbells close to the thighs.", "Push hips back with soft knees and a neutral spine.", "Stand by driving the hips forward."], "coachingCues": ["Hips back", "Weights stay close"], "cautionTags": ["low-back-load", "hamstring-tension"], "relations": [{ "exerciseId": "ex_glute_bridge", "kind": "regression" }]
+    },
+    {
+      "id": "ex_glute_bridge", "slug": "glute-bridge", "name": "Glute Bridge", "summary": "A floor-based hip extension exercise.", "difficulty": "beginner", "movementPatternId": "hinge", "equipmentIds": ["bodyweight", "mat"], "primaryMuscleIds": ["glutes"], "secondaryMuscleIds": ["hamstrings", "core"], "mediaId": "TRAINING_GLUTE_BRIDGE", "instructions": ["Lie down with feet planted near the hips.", "Brace and lift the hips without arching the back.", "Pause, then lower with control."], "coachingCues": ["Squeeze glutes", "Ribs down"], "cautionTags": ["floor-transfer"], "relations": [{ "exerciseId": "ex_romanian_deadlift", "kind": "progression" }]
+    },
+    {
+      "id": "ex_calf_raise", "slug": "calf-raise", "name": "Standing Calf Raise", "summary": "A standing plantar-flexion exercise for the calves.", "difficulty": "beginner", "movementPatternId": "isolation", "equipmentIds": ["bodyweight"], "primaryMuscleIds": ["calves"], "secondaryMuscleIds": [], "mediaId": "TRAINING_CALF_RAISE", "instructions": ["Stand tall with light support available.", "Rise onto the balls of the feet.", "Pause and lower through a comfortable range."], "coachingCues": ["Move straight up", "Control the bottom"], "cautionTags": ["ankle-load", "balance-demand"], "relations": []
+    },
+    {
+      "id": "ex_plank", "slug": "plank", "name": "Plank", "summary": "An anti-extension core hold from the forearms.", "difficulty": "beginner", "movementPatternId": "anti-extension", "equipmentIds": ["bodyweight", "mat"], "primaryMuscleIds": ["core"], "secondaryMuscleIds": ["shoulders", "glutes"], "mediaId": "TRAINING_PLANK", "instructions": ["Place elbows below shoulders.", "Brace and lift into a straight body line.", "Breathe while keeping hips steady."], "coachingCues": ["Ribs toward pelvis", "Push through elbows"], "cautionTags": ["shoulder-load", "floor-transfer"], "relations": [{ "exerciseId": "ex_dead_bug", "kind": "regression" }, { "exerciseId": "ex_side_plank", "kind": "alternative" }]
+    },
+    {
+      "id": "ex_side_plank", "slug": "side-plank", "name": "Side Plank", "summary": "A side-supported core stabilization hold.", "difficulty": "intermediate", "movementPatternId": "anti-lateral-flexion", "equipmentIds": ["bodyweight", "mat"], "primaryMuscleIds": ["core"], "secondaryMuscleIds": ["shoulders", "glutes"], "mediaId": "TRAINING_SIDE_PLANK", "instructions": ["Set the elbow directly below the shoulder.", "Stack or stagger the feet.", "Lift the hips and hold a straight line."], "coachingCues": ["Hips high", "Long spine"], "cautionTags": ["shoulder-load", "floor-transfer"], "relations": [{ "exerciseId": "ex_plank", "kind": "alternative" }]
+    },
+    {
+      "id": "ex_dead_bug", "slug": "dead-bug", "name": "Dead Bug", "summary": "A supine core control exercise with alternating limbs.", "difficulty": "beginner", "movementPatternId": "anti-extension", "equipmentIds": ["bodyweight", "mat"], "primaryMuscleIds": ["core"], "secondaryMuscleIds": [], "mediaId": "TRAINING_DEAD_BUG", "instructions": ["Lie on the back with hips and knees bent.", "Brace gently and extend opposite arm and leg.", "Return without the lower back lifting."], "coachingCues": ["Move slowly", "Keep back heavy"], "cautionTags": ["floor-transfer"], "relations": [{ "exerciseId": "ex_plank", "kind": "progression" }]
+    }
+  ]
+}

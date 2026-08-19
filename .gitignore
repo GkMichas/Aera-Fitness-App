@@ -1,7 +1,14 @@
 node_modules/
 .next/
+.open-next/
+dist/
+.wrangler/
 out/
+.pnpm-store/
+.vercel/
+coverage/
 .env
 .env.local
 .DS_Store
 *.log
+*.tsbuildinfo

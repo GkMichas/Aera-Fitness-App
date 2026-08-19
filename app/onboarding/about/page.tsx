@@ -1,2 +1,11 @@
-import Link from "next/link";
-export default function AboutPage(){return <main className="mx-auto min-h-screen max-w-3xl bg-[var(--aera-ivory)] px-6 py-10"><div className="text-sm font-semibold text-black/45">3/10</div><h1 className="mt-8 text-5xl font-black tracking-[-.05em]">About you</h1><div className="mt-8 grid gap-4 sm:grid-cols-2">{[["name","First name","George"],["age","Age","34"],["height","Height (cm)","170"],["weight","Weight (kg)","84.2"]].map(([id,label,value])=><div key={id}><label htmlFor={id} className="text-sm font-semibold">{label}</label><input id={id} defaultValue={value} className="mt-2 min-h-12 w-full rounded-lg border border-black/15 bg-white px-4"/></div>)}</div><div className="mt-8 flex justify-end"><Link href="/onboarding/plan" className="flex min-h-12 items-center rounded-lg bg-[var(--aera-terracotta)] px-6 font-bold text-white">Create my plan</Link></div></main>}
+import { Choice, Field, OnboardingFrame } from "@/components/onboarding-screen";
+import { saveAbout } from "@/app/onboarding/actions";
+
+export default function Page() {
+  return <OnboardingFrame step={3} title="About you" description="These values set your initial calorie and protein baseline." backHref="/onboarding/goal" action={saveAbout}>
+    <Field label="First name" name="firstName" required />
+    <div className="grid grid-cols-2 gap-3"><Field label="Age" name="age" type="number" min={18} max={100} required /><Field label="Height (cm)" name="heightCm" type="number" min={80} max={260} step={0.1} required /></div>
+    <Field label="Weight (kg)" name="weightKg" type="number" min={25} max={400} step={0.1} required />
+    <div className="grid grid-cols-2 gap-2"><Choice name="sex" value="male" required>Male</Choice><Choice name="sex" value="female" required>Female</Choice><Choice name="sex" value="other" required>Other</Choice><Choice name="sex" value="prefer_not_to_say" required>Prefer not to say</Choice></div>
+  </OnboardingFrame>;
+}
