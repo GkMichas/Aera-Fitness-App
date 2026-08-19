@@ -15,24 +15,26 @@ Implemented now:
 - Login and signup surfaces
 - First onboarding path: goal → about → initial plan
 - Home dashboard with design-system parity
-- Read-only core surfaces for Coach, Training, Nutrition, You, Weekly Review and AERA Health
+- Functional preview surfaces for Coach, Training, Nutrition, Progress, Weekly Review and AERA Health
 - Accessible labels/focus styles for form controls
 - Demo data provider
+- Curated exercise/equipment database and deterministic programming engine
+- English food/recipe catalog with deterministic nutrition calculations
+- Coach context, memory and provider abstraction
+- Progress trends, weekly intelligence and private-photo model
+- Health safety classification and escalation layer
+- Named AERA media library with 18 exercise posters, nutrition photography and labeled progress demo media
+- Unit/validation scripts for the core domain engines
 - Source-of-truth design docs and 31-screen inventory
 - Codex implementation roadmap
 
 Not yet production-complete:
 
 - Supabase authentication/data persistence
-- All onboarding steps
-- Exercise/equipment database
-- Training programming engine
-- Nutrition food/recipe database
 - Real AI orchestration/memory
-- Health safety engine
-- Full media library and exercise videos
 - GDPR/privacy controls
-- automated tests and CI
+- CI, deployment monitoring and final launch QA
+- Optional first-party MP4 exercise technique clips; production poster fallback is complete
 
 ## Run locally
 

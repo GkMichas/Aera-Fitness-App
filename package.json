@@ -4,9 +4,20 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "validate:training": "node scripts/validate-training-catalog.mjs",
+    "test:training": "node --experimental-strip-types scripts/test-training-engine.mts",
+    "validate:nutrition": "node scripts/validate-nutrition-catalog.mjs",
+    "validate:media": "node --experimental-strip-types scripts/validate-media.mts",
+    "test:nutrition": "node --experimental-strip-types scripts/test-nutrition.mts",
+    "test:coach": "node --experimental-strip-types scripts/test-coach-engine.mts",
+    "test:progress": "node --experimental-strip-types scripts/test-progress-engine.mts",
+    "test:health": "node --experimental-strip-types scripts/test-health-safety.mts"
+    ,"check:english": "node scripts/check-english-only.mjs"
+    ,"typecheck": "tsc --noEmit"
+    ,"test": "npm run validate:training && npm run test:training && npm run validate:nutrition && npm run test:nutrition && npm run validate:media && npm run test:coach && npm run test:progress && npm run test:health && npm run check:english"
   },
   "dependencies": {
     "next": "16.3.0",

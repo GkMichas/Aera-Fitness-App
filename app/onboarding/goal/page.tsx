@@ -1,3 +1,13 @@
-import Link from "next/link";
-const goals=["Lose fat","Build muscle","Get stronger","Improve fitness","Maintain weight","Body recomposition"];
-export default function GoalPage(){return <main className="mx-auto min-h-screen max-w-3xl bg-[var(--aera-ivory)] px-6 py-10"><div className="text-sm font-semibold text-black/45">2/10</div><h1 className="mt-8 text-5xl font-black tracking-[-.05em]">What do you want to achieve?</h1><p className="mt-3 text-black/50">Pick one primary goal. You can add secondary goals after.</p><div className="mt-8 grid gap-3 sm:grid-cols-2">{goals.map((g,i)=><button key={g} className={`min-h-20 rounded-xl border p-5 text-left text-lg font-bold ${i===0?"border-[var(--aera-terracotta)] bg-white text-[var(--aera-terracotta)]":"border-black/15 bg-white"}`}>{g}{i===0?<span className="float-right">✓</span>:null}</button>)}</div><div className="mt-8 flex justify-end"><Link href="/onboarding/about" className="flex min-h-12 items-center rounded-lg bg-[var(--aera-terracotta)] px-6 font-bold text-white">Continue</Link></div></main>}
+import { Choice, Field, OnboardingFrame } from "@/components/onboarding-screen";
+import { saveGoal } from "@/app/onboarding/actions";
+
+const goals = [["lose_fat", "Lose fat"], ["build_muscle", "Build muscle"], ["get_stronger", "Get stronger"], ["improve_fitness", "Improve fitness"], ["maintain_weight", "Maintain weight"], ["body_recomposition", "Body recomposition"]] as const;
+
+export default async function Page({ searchParams }: { searchParams: Promise<{ error?: string }> }) {
+  const { error } = await searchParams;
+  return <OnboardingFrame step={2} title="What do you want to achieve?" description="Pick one primary goal. You can add secondary goals after." backHref="/onboarding/welcome" action={saveGoal} error={error}>
+    <div className="flex flex-col gap-2.5">{goals.map(([value, label]) => <Choice key={value} name="primaryGoal" value={value} required>{label}</Choice>)}</div>
+    <Field label="Target weight (optional)" name="targetWeightKg" type="number" min={25} max={400} step={0.1} />
+    <Field label="Target date (optional)" name="targetDate" type="date" />
+  </OnboardingFrame>;
+}

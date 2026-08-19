@@ -26,6 +26,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 button, input, select, textarea { font: inherit; }
+.field-input { min-height: 44px; width: 100%; border-radius: 8px; border: 1px solid rgba(23,23,23,.1); background: var(--aera-ivory); padding: 0 12px; color: var(--aera-ink); outline: none; }
 a { color: inherit; text-decoration: none; }
 ::selection { background: var(--aera-sand); color: var(--aera-ink); }
 
@@ -42,4 +43,92 @@ textarea:focus-visible {
 .aera-grid-bg {
   background-image: radial-gradient(circle at 1px 1px, rgba(23,23,23,.055) 1px, transparent 0);
   background-size: 24px 24px;
+}
+
+.reference-stage {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  overflow: auto;
+  padding: 32px;
+  background: #edeae4;
+}
+
+.reference-phone {
+  width: 390px;
+  height: 844px;
+  flex: none;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.reference-phone image-slot {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #e9e6e0;
+  color: rgba(23, 23, 23, 0.46);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-align: center;
+}
+
+.reference-phone image-slot::after {
+  content: attr(placeholder);
+  max-width: 86%;
+}
+
+.reference-phone #aera-landing-hero,
+.reference-phone #aera-home-training,
+.reference-phone #aera-training-hero { background: url("/media/training/dumbbell-row.jpg") center / cover no-repeat !important; }
+.reference-phone #aera-session-video,
+.reference-phone #aera-wd-3 { background: url("/media/training/shoulder-press.jpg") center / cover no-repeat !important; }
+.reference-phone #aera-wd-1 { background: url("/media/training/push-up.jpg") center / cover no-repeat !important; }
+.reference-phone #aera-wd-2,
+.reference-phone #aera-ex-video { background: url("/media/training/dumbbell-row.jpg") center / cover no-repeat !important; }
+.reference-phone #aera-wd-4 { background: url("/media/training/biceps-curl.jpg") center / cover no-repeat !important; }
+.reference-phone #aera-wd-5 { background: url("/media/training/plank.jpg") center / cover no-repeat !important; }
+.reference-phone #aera-meal-breakfast { background: url("/media/nutrition/greek-yogurt-bowl.jpg") center / cover no-repeat !important; }
+.reference-phone #aera-meal-lunch,
+.reference-phone #aera-coach-meal { background: url("/media/nutrition/chicken-pita.jpg") center / cover no-repeat !important; }
+.reference-phone #aera-progress-a,
+.reference-phone #aera-progress-b { background: url("/media/progress/demo-front-diptych.jpg") left center / 200% 100% no-repeat !important; }
+.reference-phone #aera-progress-b { background-position: right center !important; }
+
+.reference-phone #aera-landing-hero::after,
+.reference-phone #aera-home-training::after,
+.reference-phone #aera-training-hero::after,
+.reference-phone #aera-session-video::after,
+.reference-phone #aera-wd-1::after,
+.reference-phone #aera-wd-2::after,
+.reference-phone #aera-wd-3::after,
+.reference-phone #aera-wd-4::after,
+.reference-phone #aera-wd-5::after,
+.reference-phone #aera-ex-video::after,
+.reference-phone #aera-meal-breakfast::after,
+.reference-phone #aera-meal-lunch::after,
+.reference-phone #aera-coach-meal::after,
+.reference-phone #aera-progress-a::after,
+.reference-phone #aera-progress-b::after {
+  content: none;
+}
+
+@media (max-width: 453px) {
+  .reference-stage {
+    place-items: start center;
+    padding: 0;
+    background: #f7f5f1;
+  }
+
+  .reference-phone,
+  .reference-phone > div {
+    border-radius: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
 }

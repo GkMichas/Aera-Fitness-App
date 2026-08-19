@@ -1,2 +1,7 @@
-import { Eyebrow, PageTitle } from "@/components/ui";
-export default function WeeklyReviewPage(){return <><PageTitle title="A steady week." subtitle="Week 32 · 12–18 Aug"/><div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">{[["Body","−0.6 kg"],["Waist","−0.8 cm"],["Training","4 / 4"],["Nutrition","89%"]].map(([a,b])=><div key={a} className="rounded-xl bg-white p-6"><Eyebrow tone="forest">{a}</Eyebrow><div className="mt-2 text-3xl font-black">{b}</div></div>)}</div><section className="mt-6 rounded-2xl border border-[var(--aera-forest)] bg-white p-6"><Eyebrow tone="forest">AERA says</Eyebrow><p className="mt-3 max-w-3xl text-lg leading-7">Your consistency is strong. Weight is moving steadily while training performance remains stable. Keep the current calorie target for another week.</p></section></>}
+import { WeeklyReview } from "@/components/weekly-review";
+import { loadWeeklyReview } from "@/lib/progress/source";
+
+export default async function Page() {
+  const { review, isDemo } = await loadWeeklyReview();
+  return <WeeklyReview review={review} isDemo={isDemo} />;
+}

@@ -1,17 +1,49 @@
 import Image from "next/image";
+import Link from "next/link";
 import { demoUser } from "@/lib/demo-data";
-import { Eyebrow, PrimaryButton, SecondaryButton } from "@/components/ui";
 
-export function MetricsStrip() {
+const metricStyles = {
+  positive: "text-[#2F6146]",
+  recovery: "text-[#4E626B]",
+  neutral: "text-black/50",
+  warning: "text-[var(--aera-warning)]",
+} as const;
+
+export function HomeHeader() {
   return (
-    <section className="mt-8 grid overflow-hidden border-y border-black/35 sm:grid-cols-2 xl:grid-cols-5" aria-label="Today's metrics">
+    <header className="flex items-start justify-between gap-3">
+      <div>
+        <h1 className="max-w-[15ch] text-[30px] font-bold leading-[1.1] tracking-[-.025em] lg:max-w-none lg:text-[48px]">
+          Good morning, George
+        </h1>
+        <p className="mt-1 text-[15px] text-black/60 lg:text-base">Here&apos;s your plan for today.</p>
+      </div>
+      <Link href="/you" aria-label="Open profile" className="grid size-[38px] flex-none place-items-center rounded-full bg-[var(--aera-stone)] text-sm font-semibold lg:hidden">
+        G
+      </Link>
+    </header>
+  );
+}
+
+export function MetricsGrid() {
+  return (
+    <section className="mt-[18px] grid grid-cols-3 gap-px overflow-hidden rounded-xl border border-black/12 bg-black/12 lg:mt-8 lg:grid-cols-5" aria-label="Today’s metrics">
       {demoUser.metrics.map((metric, index) => (
-        <div key={metric.label} className={`min-h-[136px] px-5 py-5 ${index ? "border-t border-black/20 sm:border-t-0 sm:border-l" : ""} border-black/20`}>
-          <div className="text-[11px] font-semibold uppercase tracking-[.15em] text-black/45">{metric.label}</div>
-          <div className="mt-2 text-[30px] font-black tracking-[-.035em]">{metric.value}</div>
-          <div className={`mt-2 text-[13px] ${metric.tone === "positive" ? "text-[var(--aera-forest)]" : metric.tone === "recovery" ? "text-[var(--aera-recovery-blue)]" : "text-black/48"}`}>{metric.note}</div>
-          {metric.progress ? <div className="mt-4 h-1.5 bg-black/10"><div className="h-full bg-[var(--aera-forest)]" style={{ width: `${metric.progress}%` }} /></div> : null}
-        </div>
+        <article
+          key={metric.label}
+          className={`bg-white px-3 py-[14px] lg:min-h-32 lg:px-5 lg:py-5 ${index === 4 ? "col-span-2 lg:col-span-1" : ""}`}
+        >
+          <p className="text-[10px] font-semibold uppercase tracking-[.1em] text-black/50 lg:text-[11px]">{metric.label}</p>
+          <p className="mt-[5px] text-[19px] font-bold tracking-[-.02em] lg:text-[27px]">{metric.value}</p>
+          <p className={`mt-[5px] text-[11px] font-semibold lg:text-xs ${metricStyles[metric.tone ?? "neutral"]}`}>
+            {metric.note}
+          </p>
+          {metric.progress ? (
+            <div className="mt-2 h-1 overflow-hidden rounded-sm bg-[var(--aera-stone)]">
+              <div className="h-full bg-[var(--aera-forest)]" style={{ width: `${metric.progress}%` }} />
+            </div>
+          ) : null}
+        </article>
       ))}
     </section>
   );
@@ -19,48 +51,52 @@ export function MetricsStrip() {
 
 export function InsightCard() {
   return (
-    <section className="mt-8 rounded-xl border border-[var(--aera-terracotta)] bg-white p-6 sm:p-8">
-      <Eyebrow>AERA Insight</Eyebrow>
-      <p className="mt-4 max-w-4xl text-[18px] font-medium leading-7 sm:text-[20px]">Your weight is trending down while session volume holds steady. Recovery is 82% and soreness is moderate — keep today's upper-body session and hold the current calorie target.</p>
-      <div className="mt-6"><PrimaryButton href="/coach">Ask AERA</PrimaryButton></div>
+    <section className="mt-[18px] rounded-[14px] bg-[var(--aera-forest)] p-5 text-white lg:mt-8 lg:p-8">
+      <p className="text-[10px] font-semibold uppercase tracking-[.16em] text-white/60">AERA Insight</p>
+      <p className="mt-[14px] max-w-3xl text-[16px] leading-6 lg:text-xl lg:leading-8">Weight is trending down and recovery is good — keep the planned upper-body session.</p>
+      <Link href="/coach" className="mt-[14px] inline-flex min-h-11 items-center rounded-lg bg-white px-[18px] text-sm font-semibold text-[var(--aera-ink)]">
+        Ask AERA
+      </Link>
     </section>
   );
 }
 
 export function TodayPlan() {
   return (
-    <section className="mt-9">
-      <h2 className="text-[27px] font-black tracking-[-.035em]">Today's plan</h2>
-      <div className="mt-4 grid gap-4 xl:grid-cols-2">
-        <article className="overflow-hidden rounded-xl bg-white shadow-[0_1px_0_rgba(23,23,23,.06)]">
-          <div className="relative aspect-[16/7] overflow-hidden bg-[var(--aera-stone)]">
-            <Image src={demoUser.plan.training.image} alt="Demo training session" fill className="object-cover" priority sizes="(max-width: 1280px) 100vw, 50vw" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
-            <div className="absolute bottom-4 left-5 text-white"><Eyebrow tone="terracotta">Training</Eyebrow><div className="mt-1 text-2xl font-black">{demoUser.plan.training.title}</div></div>
-          </div>
-          <div className="p-5">
-            <p className="text-sm text-black/50">{demoUser.plan.training.duration} · {demoUser.plan.training.meta}</p>
-            <div className="mt-5"><PrimaryButton href="/training">Start workout</PrimaryButton></div>
-          </div>
-        </article>
+    <section className="mt-[18px] grid gap-3 lg:mt-8 lg:grid-cols-2 lg:gap-5" aria-label="Today’s plan">
+      <article className="flex overflow-hidden rounded-xl border border-black/12 bg-white">
+        <div className="relative w-[104px] flex-none lg:w-[42%]">
+          <Image src={demoUser.plan.training.image} alt="Upper-body training session" fill className="object-cover" sizes="(max-width: 1023px) 104px, 420px" priority />
+        </div>
+        <div className="flex flex-1 flex-col gap-2 p-4 lg:p-6">
+          <p className="text-[10px] font-semibold uppercase tracking-[.12em] text-[var(--aera-forest)]">Training</p>
+          <h2 className="text-[19px] font-bold tracking-[-.02em] lg:text-3xl">Upper Body</h2>
+          <p className="text-[13px] text-black/60">45 min · 5 exercises</p>
+          <Link href="/training/active" className="mt-0.5 inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--aera-terracotta)] px-4 text-sm font-semibold text-white lg:mt-4 lg:w-max">
+            Start Workout
+          </Link>
+        </div>
+      </article>
 
-        <article className="rounded-xl bg-[var(--aera-stone)] p-6">
-          <Eyebrow>Nutrition</Eyebrow>
-          <div className="mt-4 text-[28px] font-black tracking-[-.03em]">{demoUser.plan.nutrition.calories} kcal · {demoUser.plan.nutrition.protein} g protein</div>
-          <p className="mt-2 text-sm text-black/48">{demoUser.plan.nutrition.remainingCalories} kcal and {demoUser.plan.nutrition.remainingProtein} g protein left today</p>
-          <div className="mt-8"><SecondaryButton href="/nutrition">View nutrition</SecondaryButton></div>
-        </article>
-      </div>
+      <Link href="/nutrition" className="flex min-h-[112px] items-center justify-between gap-3 rounded-xl border border-black/12 bg-white p-4 lg:p-6">
+        <div className="flex flex-col gap-1.5">
+          <p className="text-[10px] font-semibold uppercase tracking-[.12em] text-[#B24A34]">Nutrition</p>
+          <h2 className="text-[19px] font-bold tracking-[-.02em] lg:text-3xl">1,180 kcal left</h2>
+          <p className="text-[13px] text-black/60">Protein 88 / 170 g</p>
+        </div>
+        <span className="flex-none text-sm font-semibold text-[#B24A34]">View →</span>
+      </Link>
     </section>
   );
 }
 
-export function CheckInCard() {
+export function HomeScreen() {
   return (
-    <section className="mt-8 border-t border-black/35 pt-7">
-      <h2 className="text-[27px] font-black tracking-[-.035em]">How are you feeling today?</h2>
-      <p className="mt-1 text-[15px] text-black/50">Seven quick answers, under 30 seconds. It changes today's recommendation.</p>
-      <button className="mt-5 min-h-12 rounded-lg bg-[var(--aera-terracotta)] px-6 font-bold text-white">Start check-in</button>
-    </section>
+    <>
+      <HomeHeader />
+      <MetricsGrid />
+      <InsightCard />
+      <TodayPlan />
+    </>
   );
 }
