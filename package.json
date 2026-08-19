@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build --webpack",
-    "build:sites": "opennextjs-cloudflare build --skipWranglerConfigCheck",
+    "build:sites": "opennextjs-cloudflare build --skipWranglerConfigCheck && node scripts/prepare-sites-dist.mjs",
     "start": "next start",
     "lint": "eslint .",
     "validate:training": "node scripts/validate-training-catalog.mjs",
