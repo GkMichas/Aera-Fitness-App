@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  body { margin: 0; background: #EDEAE4; color: #171717; font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #B24A34; text-decoration: none; }
+  a:hover { color: #E6533A; }
+  *:focus-visible { outline: 2px solid #E6533A; outline-offset: 2px; }
+  ::selection { background: rgba(230,83,58,0.18); }
+  @keyframes aera-ring { from { stroke-dashoffset: 264; } }
+</style>
+</helmet>
+
+<div style="padding:72px 56px 120px;display:flex;flex-direction:column;gap:72px">
+
+  <header style="display:flex;flex-direction:column;gap:26px;max-width:900px">
+    <div style="display:flex;align-items:baseline;gap:18px">
+      <span style="font-size:30px;font-weight:700;letter-spacing:0.16em;line-height:1">AERA</span>
+      <span style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.5)">V1 · Mobile screens</span>
+    </div>
+    <h1 style="margin:0;font-size:52px;line-height:1.03;letter-spacing:-0.03em;font-weight:700;max-width:20ch;text-wrap:pretty">Thirty-one screens, one continuous coach.</h1>
+    <p style="margin:0;font-size:17px;line-height:1.6;color:rgba(23,23,23,0.68);max-width:62ch">Hi-fi mobile screens on the AERA design system — 390×844, Inter, terracotta actions, forest for training, recovery blue for sleep. Photography sits in named slots: drag an image onto any placeholder to fill it.</p>
+  </header>
+
+  <section style="display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid rgba(23,23,23,0.16);padding-bottom:12px;max-width:1600px">
+      <span style="font-size:11px;font-weight:700;letter-spacing:0.16em;color:#E6533A">FLOW 01</span>
+      <h2 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.02em">Landing → Onboarding → Plan</h2>
+      <span style="font-size:14px;color:rgba(23,23,23,0.5);margin-left:auto">3–5 minutes, one decision per screen</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:40px">
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Landing">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">01 · Public</span><span style="font-size:15px;font-weight:600">Landing</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="position:absolute;inset:0 0 auto;height:520px">
+            <image-slot id="aera-landing-hero" shape="rect" fit="cover" placeholder="LANDING_HERO · natural daylight, negative space top" style="background: url(&quot;./pexels-mikegles-14623747-mszt9add-boxz.jpg&quot;) center / cover no-repeat"></image-slot>
+          </div>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,23,23,0.45) 0%,rgba(23,23,23,0.1) 34%,rgba(247,245,241,0.9) 56%,#F7F5F1 66%);pointer-events:none"></div>
+          <div style="position:relative;height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600;color:#FFFFFF"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="position:relative;padding:8px 26px 22px;display:flex;flex-direction:column;gap:20px;flex:1">
+            <span style="font-size:19px;font-weight:700;letter-spacing:0.16em;color:#FFFFFF">AERA</span>
+            <div style="margin-top:auto;display:flex;flex-direction:column;gap:18px">
+              <h3 style="margin:0;font-size:38px;line-height:1.05;letter-spacing:-0.03em;font-weight:700;max-width:14ch;text-wrap:pretty">Understand your body. Become your best.</h3>
+              <p style="margin:0;font-size:16px;line-height:1.55;color:rgba(23,23,23,0.7);max-width:32ch">Your personal AI coach for fitness, nutrition, recovery and long-term progress.</p>
+              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12)">
+                <div style="background:#F7F5F1;padding:12px 6px;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;color:rgba(23,23,23,0.6)">Fitness</div>
+                <div style="background:#F7F5F1;padding:12px 6px;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;color:rgba(23,23,23,0.6)">Nutrition</div>
+                <div style="background:#F7F5F1;padding:12px 6px;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;color:rgba(23,23,23,0.6)">Body</div>
+                <div style="background:#F7F5F1;padding:12px 6px;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;color:rgba(23,23,23,0.6)">Recovery</div>
+                <div style="background:#F7F5F1;padding:12px 6px;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;color:rgba(23,23,23,0.6)">Progress</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <button type="button" style="appearance:none;border:none;cursor:pointer;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#C7412B">Start Your Journey</button>
+                <button type="button" style="appearance:none;cursor:pointer;background:transparent;color:#171717;border:1px solid rgba(23,23,23,0.2);font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#EDEAE4">See How It Works</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Onboarding Goal">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">02 · Onboarding 2/10</span><span style="font-size:15px;font-weight:600">Primary goal</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="padding:6px 24px 0;display:flex;flex-direction:column;gap:20px;flex:1;overflow-y:auto;min-height:0">
+            <div style="display:flex;align-items:center;gap:14px">
+              <span style="font-size:22px;color:rgba(23,23,23,0.6)">←</span>
+              <div style="flex:1;height:3px;background:#E9E6E0;border-radius:2px"><div style="width:20%;height:100%;background:#171717;border-radius:2px"></div></div>
+              <span style="font-size:13px;font-weight:600;color:rgba(23,23,23,0.5)">2/10</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <h3 style="margin:0;font-size:32px;line-height:1.1;letter-spacing:-0.025em;font-weight:700;max-width:16ch">What do you want to achieve?</h3>
+              <p style="margin:0;font-size:15px;line-height:1.5;color:rgba(23,23,23,0.6)">Pick one primary goal. You can add secondary goals after.</p>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="background:#171717;color:#FFFFFF;border-radius:10px;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;min-height:52px"><span style="font-size:16px;font-weight:600">Lose fat</span><span style="font-size:15px">✓</span></div>
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:10px;padding:15px 20px;font-size:16px;font-weight:500;min-height:52px" style-hover="border-color:rgba(23,23,23,0.35)">Build muscle</div>
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:10px;padding:15px 20px;font-size:16px;font-weight:500;min-height:52px" style-hover="border-color:rgba(23,23,23,0.35)">Get stronger</div>
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:10px;padding:15px 20px;font-size:16px;font-weight:500;min-height:52px" style-hover="border-color:rgba(23,23,23,0.35)">Improve fitness</div>
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:10px;padding:15px 20px;font-size:16px;font-weight:500;min-height:52px" style-hover="border-color:rgba(23,23,23,0.35)">Maintain weight</div>
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:10px;padding:15px 20px;font-size:16px;font-weight:500;min-height:52px" style-hover="border-color:rgba(23,23,23,0.35)">Body recomposition</div>
+            </div>
+            <div style="margin-top:auto;padding-bottom:26px;display:flex;flex-direction:column;gap:12px">
+              <button type="button" style="appearance:none;border:none;cursor:pointer;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#C7412B">Continue</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Onboarding About You">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">03 · Onboarding 3/10</span><span style="font-size:15px;font-weight:600">About you</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="padding:6px 24px 0;display:flex;flex-direction:column;gap:20px;flex:1;overflow-y:auto;min-height:0">
+            <div style="display:flex;align-items:center;gap:14px">
+              <span style="font-size:22px;color:rgba(23,23,23,0.6)">←</span>
+              <div style="flex:1;height:3px;background:#E9E6E0;border-radius:2px"><div style="width:30%;height:100%;background:#171717;border-radius:2px"></div></div>
+              <span style="font-size:13px;font-weight:600;color:rgba(23,23,23,0.5)">3/10</span>
+            </div>
+            <h3 style="margin:0;font-size:32px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">About you</h3>
+            <div style="display:flex;flex-direction:column;gap:18px">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">First name</span>
+                <input type="text" value="George" style="appearance:none;font-family:inherit;font-size:16px;font-weight:500;color:#171717;background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:15px 16px;min-height:52px">
+              </div>
+              <div style="display:flex;gap:12px">
+                <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+                  <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Age</span>
+                  <input type="text" value="34" style="appearance:none;font-family:inherit;font-size:16px;font-weight:500;color:#171717;background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:15px 16px;min-height:52px">
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+                  <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Sex</span>
+                  <div style="display:flex;border:1px solid rgba(23,23,23,0.14);border-radius:8px;overflow:hidden;min-height:52px">
+                    <div style="flex:1;display:flex;align-items:center;justify-content:center;background:#171717;color:#FFFFFF;font-size:15px;font-weight:600">Male</div>
+                    <div style="flex:1;display:flex;align-items:center;justify-content:center;background:#FFFFFF;color:rgba(23,23,23,0.6);font-size:15px;font-weight:500;border-left:1px solid rgba(23,23,23,0.14)">Female</div>
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex;gap:12px">
+                <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+                  <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Height</span>
+                  <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:15px 16px;min-height:52px;display:flex;align-items:center;justify-content:space-between"><span style="font-size:16px;font-weight:500">170</span><span style="font-size:14px;color:rgba(23,23,23,0.5)">cm</span></div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+                  <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Weight</span>
+                  <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:15px 16px;min-height:52px;display:flex;align-items:center;justify-content:space-between"><span style="font-size:16px;font-weight:500">84.2</span><span style="font-size:14px;color:rgba(23,23,23,0.5)">kg</span></div>
+                </div>
+              </div>
+              <div style="background:#E9E6E0;border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:6px">
+                <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.55)">Why AERA asks</span>
+                <span style="font-size:14px;line-height:1.5;color:rgba(23,23,23,0.7)">These four values set your calorie and protein baseline. You can change them any time.</span>
+              </div>
+            </div>
+            <div style="margin-top:auto;padding-bottom:26px">
+              <button type="button" style="appearance:none;border:none;cursor:pointer;width:100%;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#C7412B">Continue</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Initial Plan">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">04 · Onboarding 10/10</span><span style="font-size:15px;font-weight:600">Your AERA plan</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#24463A;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600;color:#FFFFFF"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="padding:14px 24px 0;display:flex;flex-direction:column;gap:26px;flex:1;overflow-y:auto;min-height:0">
+            <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.6)">Your AERA plan</span>
+            <h3 style="margin:0;font-size:34px;line-height:1.08;letter-spacing:-0.025em;font-weight:700;color:#FFFFFF;max-width:16ch">Fat loss first, muscle kept.</h3>
+            <div style="display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,0.16)">
+              <div style="background:#24463A;padding:16px 2px;display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:14px;color:rgba(255,255,255,0.65)">Primary goal</span><span style="font-size:16px;font-weight:600;color:#FFFFFF">Lose fat</span></div>
+              <div style="background:#24463A;padding:16px 2px;display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:14px;color:rgba(255,255,255,0.65)">Secondary</span><span style="font-size:16px;font-weight:600;color:#FFFFFF">Build muscle</span></div>
+              <div style="background:#24463A;padding:16px 2px;display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:14px;color:rgba(255,255,255,0.65)">Current weight</span><span style="font-size:16px;font-weight:600;color:#FFFFFF">84.2 kg</span></div>
+              <div style="background:#24463A;padding:16px 2px;display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:14px;color:rgba(255,255,255,0.65)">Target</span><span style="font-size:16px;font-weight:600;color:#FFFFFF">78 kg by Feb</span></div>
+              <div style="background:#24463A;padding:16px 2px;display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:14px;color:rgba(255,255,255,0.65)">Training</span><span style="font-size:16px;font-weight:600;color:#FFFFFF">4 days · dumbbells</span></div>
+              <div style="background:#24463A;padding:16px 2px;display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:14px;color:rgba(255,255,255,0.65)">Nutrition</span><span style="font-size:16px;font-weight:600;color:#FFFFFF">2,240 kcal · 170 g P</span></div>
+            </div>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.75)">This is a starting point. AERA will adjust it from your check-ins, sessions and measurements.</p>
+            <div style="margin-top:auto;padding-bottom:26px;display:flex;flex-direction:column;gap:10px">
+              <button type="button" style="appearance:none;border:none;cursor:pointer;background:#FFFFFF;color:#171717;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#EDEAE4">Meet Your Coach</button>
+              <button type="button" style="appearance:none;cursor:pointer;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,0.3);font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px" style-hover="background:rgba(255,255,255,0.1)">Adjust the plan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid rgba(23,23,23,0.16);padding-bottom:12px;max-width:1600px">
+      <span style="font-size:11px;font-weight:700;letter-spacing:0.16em;color:#E6533A">FLOW 02</span>
+      <h2 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.02em">The daily loop</h2>
+      <span style="font-size:14px;color:rgba(23,23,23,0.5);margin-left:auto">Home answers: how am I doing, what today, what does AERA say</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:40px">
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Home">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">05 · /home</span><span style="font-size:15px;font-weight:600">Home dashboard</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 20px 0;display:flex;flex-direction:column;gap:18px">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <h3 style="margin:0;font-size:30px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">Good morning, George</h3>
+                <span style="font-size:15px;color:rgba(23,23,23,0.6)">Here's your plan for today.</span>
+              </div>
+              <span style="width:38px;height:38px;flex:none;border-radius:50%;background:#E9E6E0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600">G</span>
+            </div>
+            <div style="flex:none;display:grid;grid-template-columns:repeat(3,1fr);flex:none;gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden">
+              <div style="background:#FFFFFF;padding:14px 12px;display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Weight</span><span style="font-size:19px;font-weight:700;letter-spacing:-0.02em">84.2<span style="font-size:12px;font-weight:600;color:rgba(23,23,23,0.45)"> kg</span></span><span style="font-size:11px;font-weight:600;color:#2F6146">↓ 0.2 wk</span></div>
+              <div style="background:#FFFFFF;padding:14px 12px;display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Sleep</span><span style="font-size:19px;font-weight:700;letter-spacing:-0.02em">7h 12m</span><span style="font-size:11px;font-weight:600;color:#4E626B">↑ 21m</span></div>
+              <div style="background:#FFFFFF;padding:14px 12px;display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Energy</span><span style="font-size:19px;font-weight:700;letter-spacing:-0.02em">7<span style="font-size:12px;font-weight:600;color:rgba(23,23,23,0.45)">/10</span></span><span style="font-size:11px;color:rgba(23,23,23,0.5)">Steady</span></div>
+              <div style="background:#FFFFFF;padding:14px 12px;display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Recovery</span><span style="font-size:19px;font-weight:700;letter-spacing:-0.02em">82%</span><span style="font-size:11px;font-weight:600;color:#2F6146">Good</span></div>
+              <div style="background:#FFFFFF;padding:14px 12px;display:flex;flex-direction:column;gap:5px;grid-column:span 2"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Steps</span><span style="font-size:19px;font-weight:700;letter-spacing:-0.02em">4,821 <span style="font-size:12px;font-weight:600;color:rgba(23,23,23,0.45)">/ 8,000</span></span><div style="height:4px;background:#E9E6E0;border-radius:2px;overflow:hidden"><div style="width:60%;height:100%;background:#24463A"></div></div></div>
+            </div>
+            <div style="flex:none;background:#24463A;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px">
+              <span style="font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.6)">AERA Insight</span>
+              <p style="margin:0;font-size:16px;line-height:1.5;color:#FFFFFF">Weight is trending down and recovery is good — keep the planned upper-body session.</p>
+              <button type="button" style="appearance:none;border:none;cursor:pointer;width:max-content;background:#FFFFFF;color:#171717;font-family:inherit;font-size:14px;font-weight:600;padding:12px 18px;border-radius:8px;min-height:44px" style-hover="background:#EDEAE4">Ask AERA</button>
+            </div>
+            <div style="flex:none;flex:none;background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden;display:flex">
+              <sc-if value="{{ showMedia }}" hint-placeholder-val="{{ true }}">
+                <div style="width:104px;flex:none;position:relative">
+                  <image-slot id="aera-home-training" shape="rect" fit="cover" placeholder="HOME_HERO_WORKOUT"></image-slot>
+                </div>
+              </sc-if>
+              <div style="flex:1;padding:16px;display:flex;flex-direction:column;gap:8px">
+                <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#24463A">Training</span>
+                <span style="font-size:19px;font-weight:700;letter-spacing:-0.02em">Upper Body</span>
+                <span style="font-size:13px;color:rgba(23,23,23,0.6)">45 min · 5 exercises</span>
+                <button type="button" style="appearance:none;border:none;cursor:pointer;margin-top:2px;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:14px;font-weight:600;padding:12px 16px;border-radius:8px;min-height:44px;transition:background 180ms ease" style-hover="background:#C7412B">Start Workout</button>
+              </div>
+            </div>
+            <div style="flex:none;background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:16px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#B24A34">Nutrition</span>
+                <span style="font-size:19px;font-weight:700;letter-spacing:-0.02em">1,180 kcal left</span>
+                <span style="font-size:13px;color:rgba(23,23,23,0.6)">Protein 88 / 170 g</span>
+              </div>
+              <span style="font-size:14px;font-weight:600;color:#B24A34;flex:none">View →</span>
+            </div>
+          </div>
+          <div style="flex:none;background:#FFFFFF;border-top:1px solid rgba(23,23,23,0.1);padding:10px 8px 20px;display:flex;justify-content:space-around">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:#171717;border-radius:5px"></span><span style="font-size:11px;font-weight:600">Home</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">Coach</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">Training</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">Nutrition</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">You</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Daily Check-in">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">06 · /check-in</span><span style="font-size:15px;font-weight:600">Daily check-in</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 22px 0;display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-size:22px;color:rgba(23,23,23,0.6)">✕</span><span style="font-size:13px;font-weight:600;color:rgba(23,23,23,0.5)">Under 30 seconds</span></div>
+            <h3 style="margin:0;font-size:30px;line-height:1.1;letter-spacing:-0.025em;font-weight:700;max-width:18ch">How are you feeling today?</h3>
+            <div style="display:flex;flex-direction:column;gap:18px">
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:15px;font-weight:600">Energy</span><span style="font-size:14px;color:rgba(23,23,23,0.55)">7 / 10</span></div>
+                <div style="height:6px;background:#E9E6E0;border-radius:3px;position:relative"><div style="width:70%;height:100%;background:#171717;border-radius:3px"></div><span style="position:absolute;left:70%;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;background:#FFFFFF;border:2px solid #171717;border-radius:50%"></span></div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:15px;font-weight:600">Sleep quality</span><span style="font-size:14px;color:rgba(23,23,23,0.55)">6 / 10</span></div>
+                <div style="height:6px;background:#E9E6E0;border-radius:3px;position:relative"><div style="width:60%;height:100%;background:#6F8792;border-radius:3px"></div><span style="position:absolute;left:60%;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;background:#FFFFFF;border:2px solid #6F8792;border-radius:50%"></span></div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:15px;font-weight:600">Stress</span><span style="font-size:14px;color:rgba(23,23,23,0.55)">4 / 10</span></div>
+                <div style="height:6px;background:#E9E6E0;border-radius:3px;position:relative"><div style="width:40%;height:100%;background:#8FA99A;border-radius:3px"></div><span style="position:absolute;left:40%;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;background:#FFFFFF;border:2px solid #8FA99A;border-radius:50%"></span></div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:15px;font-weight:600">Soreness</span><span style="font-size:14px;color:rgba(23,23,23,0.55)">5 / 10</span></div>
+                <div style="height:6px;background:#E9E6E0;border-radius:3px;position:relative"><div style="width:50%;height:100%;background:#6F8792;border-radius:3px"></div><span style="position:absolute;left:50%;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;background:#FFFFFF;border:2px solid #6F8792;border-radius:50%"></span></div>
+              </div>
+              <div style="display:flex;gap:12px">
+                <div style="flex:1;display:flex;flex-direction:column;gap:8px"><span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Mood</span><div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:14px 16px;min-height:52px;display:flex;align-items:center;font-size:16px;font-weight:500">Good</div></div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:8px"><span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Weight</span><div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:14px 16px;min-height:52px;display:flex;align-items:center;justify-content:space-between"><span style="font-size:16px;font-weight:500">84.2</span><span style="font-size:14px;color:rgba(23,23,23,0.5)">kg</span></div></div>
+              </div>
+            </div>
+            <div style="background:#E9E6E0;border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:6px">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.55)">After saving</span>
+              <span style="font-size:14px;line-height:1.5;color:rgba(23,23,23,0.72)">AERA reads today against your week and adjusts the recommendation, not the goal.</span>
+            </div>
+            <div style="margin-top:auto;padding-bottom:26px">
+              <button type="button" style="appearance:none;border:none;cursor:pointer;width:100%;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#C7412B">Save Check-in</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Coach">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">07 · /coach</span><span style="font-size:15px;font-weight:600">Coach chat</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:none;padding:6px 22px 16px;border-bottom:1px solid rgba(23,23,23,0.1);display:flex;flex-direction:column;gap:2px">
+            <span style="font-size:20px;font-weight:700;letter-spacing:0.14em">AERA</span>
+            <span style="font-size:14px;color:rgba(23,23,23,0.6)">Your personal coach.</span>
+          </div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:18px 20px;display:flex;flex-direction:column;gap:14px">
+            <span style="font-size:12px;color:rgba(23,23,23,0.45);text-align:center">Today, 9:38</span>
+            <div style="display:flex;justify-content:flex-end"><div style="background:#171717;color:#FFFFFF;font-size:15px;line-height:1.5;padding:13px 16px;border-radius:14px 14px 4px 14px;max-width:80%">My legs are sore. Should I still train today?</div></div>
+            <div style="display:flex;flex-direction:column;gap:10px;max-width:88%">
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.1);font-size:15px;line-height:1.55;padding:14px 16px;border-radius:14px 14px 14px 4px">Soreness is 5/10 and it's mostly quads from Tuesday's squats. Recovery is 82%, so training is fine — I'd move legs to Friday and do the planned upper body today.</div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.16);border-radius:8px;font-size:14px;font-weight:600;padding:11px 14px;min-height:44px;display:flex;align-items:center">View Workout</span>
+                <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.16);border-radius:8px;font-size:14px;font-weight:600;padding:11px 14px;min-height:44px;display:flex;align-items:center">Recovery Tips</span>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:flex-end"><div style="background:#171717;color:#FFFFFF;font-size:15px;line-height:1.5;padding:13px 16px;border-radius:14px 14px 4px 14px;max-width:80%">What should I eat after?</div></div>
+            <div style="display:flex;flex-direction:column;gap:10px;max-width:88%">
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.1);font-size:15px;line-height:1.55;padding:14px 16px;border-radius:14px 14px 14px 4px">You have 1,180 kcal and 82 g of protein left. Greek yogurt with honey and a chicken pita covers both without going over.</div>
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.1);border-radius:12px;overflow:hidden;display:flex">
+                <sc-if value="{{ showMedia }}" hint-placeholder-val="{{ true }}">
+                  <div style="width:88px;flex:none;position:relative"><image-slot id="aera-coach-meal" shape="rect" fit="cover" placeholder="NUTRITION_SNACK_01"></image-slot></div>
+                </sc-if>
+                <div style="flex:1;padding:14px;display:flex;flex-direction:column;gap:5px">
+                  <span style="font-size:15px;font-weight:600">Chicken pita + yogurt</span>
+                  <span style="font-size:13px;color:rgba(23,23,23,0.6)">640 kcal · 52 g protein</span>
+                  <span style="font-size:14px;font-weight:600;color:#B24A34">Open Meal Plan →</span>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:auto;display:flex;gap:8px;flex-wrap:wrap">
+              <span style="background:#EDEAE4;border-radius:20px;font-size:13px;font-weight:500;padding:9px 14px;color:rgba(23,23,23,0.7)">Why has my weight stalled?</span>
+              <span style="background:#EDEAE4;border-radius:20px;font-size:13px;font-weight:500;padding:9px 14px;color:rgba(23,23,23,0.7)">I have 20 minutes today</span>
+            </div>
+          </div>
+          <div style="flex:none;background:#FFFFFF;border-top:1px solid rgba(23,23,23,0.1);padding:12px 16px 22px;display:flex;gap:10px;align-items:center">
+            <input type="text" placeholder="Ask AERA anything" style="flex:1;appearance:none;font-family:inherit;font-size:15px;color:#171717;background:#F7F5F1;border:1px solid rgba(23,23,23,0.12);border-radius:22px;padding:13px 16px;min-height:46px">
+            <button type="button" style="appearance:none;border:none;cursor:pointer;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:15px;font-weight:600;width:46px;height:46px;border-radius:50%;flex:none;transition:background 180ms ease" style-hover="background:#C7412B">↑</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid rgba(23,23,23,0.16);padding-bottom:12px;max-width:1600px">
+      <span style="font-size:11px;font-weight:700;letter-spacing:0.16em;color:#E6533A">FLOW 03</span>
+      <h2 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.02em">Execute — training &amp; nutrition</h2>
+      <span style="font-size:14px;color:rgba(23,23,23,0.5);margin-left:auto">Video is functional · food photography carries nutrition</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:40px">
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Training">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">08 · /training</span><span style="font-size:15px;font-weight:600">Training dashboard</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 20px 0;display:flex;flex-direction:column;gap:18px">
+            <div style="display:flex;align-items:baseline;justify-content:space-between"><h3 style="margin:0;font-size:30px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">Training</h3><span style="font-size:14px;font-weight:600;color:#B24A34">Library</span></div>
+            <div style="flex:none;background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column">
+              <sc-if value="{{ showMedia }}" hint-placeholder-val="{{ true }}">
+                <div style="height:150px;position:relative"><image-slot id="aera-training-hero" shape="rect" fit="cover" placeholder="TRAINING_DUMBBELL_ROW · 16:9"></image-slot></div>
+              </sc-if>
+              <div style="padding:18px;display:flex;flex-direction:column;gap:12px">
+                <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#24463A">Today · Day 3 of 4</span>
+                <span style="font-size:24px;font-weight:700;letter-spacing:-0.02em">Upper Body</span>
+                <span style="font-size:14px;color:rgba(23,23,23,0.6)">45 min · Chest, shoulders, back, arms · Moderate</span>
+                <button type="button" style="appearance:none;border:none;cursor:pointer;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:15px;border-radius:8px;min-height:50px;transition:background 180ms ease" style-hover="background:#C7412B">Start Workout</button>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">This week</span>
+              <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px">
+                <div style="background:#24463A;border-radius:8px;padding:12px 0;display:flex;flex-direction:column;align-items:center;gap:5px"><span style="font-size:11px;color:rgba(255,255,255,0.6)">M</span><span style="font-size:13px;font-weight:600;color:#FFFFFF">✓</span></div>
+                <div style="background:#24463A;border-radius:8px;padding:12px 0;display:flex;flex-direction:column;align-items:center;gap:5px"><span style="font-size:11px;color:rgba(255,255,255,0.6)">T</span><span style="font-size:13px;font-weight:600;color:#FFFFFF">✓</span></div>
+                <div style="background:#E9E6E0;border-radius:8px;padding:12px 0;display:flex;flex-direction:column;align-items:center;gap:5px"><span style="font-size:11px;color:rgba(23,23,23,0.5)">W</span><span style="font-size:13px;color:rgba(23,23,23,0.35)">·</span></div>
+                <div style="background:#171717;border-radius:8px;padding:12px 0;display:flex;flex-direction:column;align-items:center;gap:5px"><span style="font-size:11px;color:rgba(255,255,255,0.6)">T</span><span style="font-size:13px;font-weight:600;color:#FFFFFF">•</span></div>
+                <div style="background:#E9E6E0;border-radius:8px;padding:12px 0;display:flex;flex-direction:column;align-items:center;gap:5px"><span style="font-size:11px;color:rgba(23,23,23,0.5)">F</span><span style="font-size:13px;color:rgba(23,23,23,0.35)">·</span></div>
+                <div style="background:#E9E6E0;border-radius:8px;padding:12px 0;display:flex;flex-direction:column;align-items:center;gap:5px"><span style="font-size:11px;color:rgba(23,23,23,0.5)">S</span><span style="font-size:13px;color:rgba(23,23,23,0.35)">·</span></div>
+                <div style="background:#E9E6E0;border-radius:8px;padding:12px 0;display:flex;flex-direction:column;align-items:center;gap:5px"><span style="font-size:11px;color:rgba(23,23,23,0.5)">S</span><span style="font-size:13px;color:rgba(23,23,23,0.35)">·</span></div>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;flex:none;gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden">
+              <div style="background:#FFFFFF;padding:16px;display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Streak</span><span style="font-size:22px;font-weight:700;letter-spacing:-0.02em">6 weeks</span><span style="font-size:12px;color:rgba(23,23,23,0.55)">4 sessions each</span></div>
+              <div style="background:#FFFFFF;padding:16px;display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Volume</span><span style="font-size:22px;font-weight:700;letter-spacing:-0.02em">+8%</span><span style="font-size:12px;color:rgba(23,23,23,0.55)">vs last month</span></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Recent</span>
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:10px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:15px;font-weight:600">Lower Body</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">Tue · 48 min · felt moderate</span></div><span style="font-size:12px;font-weight:600;padding:6px 10px;border-radius:6px;background:rgba(63,125,90,0.12);color:#2F6146">Done</span></div>
+            </div>
+          </div>
+          <div style="flex:none;background:#FFFFFF;border-top:1px solid rgba(23,23,23,0.1);padding:10px 8px 20px;display:flex;justify-content:space-around">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">Home</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">Coach</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:#171717;border-radius:5px"></span><span style="font-size:11px;font-weight:600">Training</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">Nutrition</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">You</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Active Workout">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">09 · /training/session</span><span style="font-size:15px;font-weight:600">Active workout</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#171717;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600;color:#FFFFFF"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:none;padding:4px 22px 14px;display:flex;align-items:center;justify-content:space-between">
+            <span style="font-size:20px;color:rgba(255,255,255,0.7)">✕</span>
+            <div style="flex:1;margin:0 16px;height:3px;background:rgba(255,255,255,0.18);border-radius:2px"><div style="width:45%;height:100%;background:#E6533A;border-radius:2px"></div></div>
+            <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.7)">3/5</span>
+          </div>
+          <sc-if value="{{ showMedia }}" hint-placeholder-val="{{ true }}">
+            <div style="height:392px;flex:none;position:relative">
+              <image-slot id="aera-session-video" shape="rect" fit="cover" placeholder="TRAINING_SHOULDER_PRESS · 4:5 video"></image-slot>
+              <div style="position:absolute;inset:auto 0 0;padding:16px 22px;background:linear-gradient(180deg,rgba(23,23,23,0) 0%,rgba(23,23,23,0.75) 100%);pointer-events:none;display:flex;align-items:flex-end;justify-content:space-between">
+                <span style="font-size:13px;font-weight:600;color:#FFFFFF">Keep ribs down, press to lockout</span>
+                <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.75)">▶ 8s loop</span>
+              </div>
+            </div>
+          </sc-if>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:22px;display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55)">Exercise 3 · Shoulders</span>
+              <span style="font-size:28px;font-weight:700;letter-spacing:-0.025em;color:#FFFFFF">Dumbbell Shoulder Press</span>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.16)">
+              <div style="background:#171717;padding:14px 2px;display:flex;flex-direction:column;gap:4px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Set</span><span style="font-size:20px;font-weight:700;color:#FFFFFF">2 / 3</span></div>
+              <div style="background:#171717;padding:14px 2px;display:flex;flex-direction:column;gap:4px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Reps</span><span style="font-size:20px;font-weight:700;color:#FFFFFF">10</span></div>
+              <div style="background:#171717;padding:14px 2px;display:flex;flex-direction:column;gap:4px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Weight</span><span style="font-size:20px;font-weight:700;color:#FFFFFF">14 kg</span></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.08);border-radius:12px;padding:16px 18px">
+              <span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#FFFFFF">0:52</span>
+              <span style="font-size:14px;color:rgba(255,255,255,0.6)">Rest remaining</span>
+              <span style="margin-left:auto;font-size:14px;font-weight:600;color:#FFFFFF">Skip rest</span>
+            </div>
+            <div style="margin-top:auto;padding-bottom:22px;display:flex;flex-direction:column;gap:10px">
+              <button type="button" style="appearance:none;border:none;cursor:pointer;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:17px;border-radius:8px;min-height:54px;transition:background 180ms ease" style-hover="background:#C7412B">Complete Set</button>
+              <div style="display:flex;gap:10px">
+                <button type="button" style="appearance:none;cursor:pointer;flex:1;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,0.3);font-family:inherit;font-size:15px;font-weight:600;padding:14px;border-radius:8px;min-height:48px" style-hover="background:rgba(255,255,255,0.1)">Replace</button>
+                <button type="button" style="appearance:none;cursor:pointer;flex:1;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,0.3);font-family:inherit;font-size:15px;font-weight:600;padding:14px;border-radius:8px;min-height:48px" style-hover="background:rgba(255,255,255,0.1)">Skip</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Nutrition">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">10 · /nutrition</span><span style="font-size:15px;font-weight:600">Nutrition today</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 20px 0;display:flex;flex-direction:column;gap:18px">
+            <div style="display:flex;align-items:baseline;justify-content:space-between"><h3 style="margin:0;font-size:30px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">Nutrition</h3><span style="font-size:14px;font-weight:600;color:#B24A34">Log meal</span></div>
+            <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:20px;display:flex;align-items:center;gap:20px">
+              <div style="position:relative;width:96px;height:96px;flex:none">
+                <svg viewBox="0 0 100 100" style="width:96px;height:96px;transform:rotate(-90deg)">
+                  <circle cx="50" cy="50" r="42" fill="none" stroke="#E9E6E0" stroke-width="9"></circle>
+                  <circle cx="50" cy="50" r="42" fill="none" stroke="#E6533A" stroke-width="9" stroke-linecap="round" stroke-dasharray="264" stroke-dashoffset="125" style="animation:aera-ring 900ms cubic-bezier(0.22,1,0.36,1) both"></circle>
+                </svg>
+                <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:19px;font-weight:700;letter-spacing:-0.02em">1,060</span><span style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(23,23,23,0.5)">of 2,240</span></div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:12px">
+                <div style="display:flex;flex-direction:column;gap:5px"><div style="display:flex;justify-content:space-between"><span style="font-size:13px;font-weight:600">Protein</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">88 / 170 g</span></div><div style="height:4px;background:#E9E6E0;border-radius:2px"><div style="width:52%;height:100%;background:#24463A;border-radius:2px"></div></div></div>
+                <div style="display:flex;flex-direction:column;gap:5px"><div style="display:flex;justify-content:space-between"><span style="font-size:13px;font-weight:600">Carbs</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">96 / 220 g</span></div><div style="height:4px;background:#E9E6E0;border-radius:2px"><div style="width:44%;height:100%;background:#D9C7AA;border-radius:2px"></div></div></div>
+                <div style="display:flex;flex-direction:column;gap:5px"><div style="display:flex;justify-content:space-between"><span style="font-size:13px;font-weight:600">Fat</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">34 / 72 g</span></div><div style="height:4px;background:#E9E6E0;border-radius:2px"><div style="width:47%;height:100%;background:#8FA99A;border-radius:2px"></div></div></div>
+              </div>
+            </div>
+            <span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Today's meals</span>
+            <div style="flex:none;background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden;display:flex">
+              <sc-if value="{{ showMedia }}" hint-placeholder-val="{{ true }}">
+                <div style="width:104px;flex:none;position:relative"><image-slot id="aera-meal-breakfast" shape="rect" fit="cover" placeholder="NUTRITION_BREAKFAST_01"></image-slot></div>
+              </sc-if>
+              <div style="flex:1;padding:14px 16px;display:flex;flex-direction:column;gap:5px">
+                <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Breakfast · logged</span>
+                <span style="font-size:17px;font-weight:600">Eggs, pita &amp; yogurt</span>
+                <span style="font-size:13px;color:rgba(23,23,23,0.6)">460 kcal · P 32 · C 40 · F 18</span>
+              </div>
+            </div>
+            <div style="flex:none;background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden;display:flex">
+              <sc-if value="{{ showMedia }}" hint-placeholder-val="{{ true }}">
+                <div style="width:104px;flex:none;position:relative"><image-slot id="aera-meal-lunch" shape="rect" fit="cover" placeholder="NUTRITION_LUNCH_01"></image-slot></div>
+              </sc-if>
+              <div style="flex:1;padding:14px 16px;display:flex;flex-direction:column;gap:5px">
+                <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Lunch · logged</span>
+                <span style="font-size:17px;font-weight:600">Chicken &amp; tomato bowl</span>
+                <span style="font-size:13px;color:rgba(23,23,23,0.6)">600 kcal · P 56 · C 56 · F 16</span>
+              </div>
+            </div>
+            <div style="border:1px dashed rgba(23,23,23,0.22);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:10px">
+              <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Dinner · planned</span>
+              <span style="font-size:17px;font-weight:600">Salmon, rice &amp; greens</span>
+              <span style="font-size:13px;color:rgba(23,23,23,0.6)">680 kcal · P 48 · C 62 · F 24 · 20 min</span>
+              <div style="display:flex;gap:10px;align-items:center">
+                <button type="button" style="appearance:none;border:none;cursor:pointer;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:14px;font-weight:600;padding:12px 16px;border-radius:8px;min-height:44px;transition:background 180ms ease" style-hover="background:#C7412B">Use This Meal</button>
+                <span style="font-size:14px;font-weight:600;color:#B24A34">Swap</span>
+              </div>
+            </div>
+          </div>
+          <div style="flex:none;background:#FFFFFF;border-top:1px solid rgba(23,23,23,0.1);padding:10px 8px 20px;display:flex;justify-content:space-around">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">Home</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">Coach</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">Training</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:#171717;border-radius:5px"></span><span style="font-size:11px;font-weight:600">Nutrition</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">You</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Meal Plan">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">11 · /nutrition/plan</span><span style="font-size:15px;font-weight:600">Meal plan &amp; logging</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 20px 0;display:flex;flex-direction:column;gap:18px">
+            <div style="display:flex;align-items:center;gap:14px"><span style="font-size:22px;color:rgba(23,23,23,0.6)">←</span><h3 style="margin:0;font-size:24px;line-height:1.1;letter-spacing:-0.02em;font-weight:700">Plan a day</h3></div>
+            <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px">
+              <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Tell AERA what you have</span>
+              <div style="background:#F7F5F1;border:1px solid rgba(23,23,23,0.12);border-radius:8px;padding:14px;font-size:15px;line-height:1.5;color:rgba(23,23,23,0.85)">I have chicken, pasta, yogurt, tomatoes and eggs.</div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <span style="background:#171717;color:#FFFFFF;border-radius:20px;font-size:13px;font-weight:600;padding:9px 14px">High protein</span>
+                <span style="background:#EDEAE4;border-radius:20px;font-size:13px;font-weight:500;padding:9px 14px;color:rgba(23,23,23,0.7)">Under 20 min</span>
+                <span style="background:#EDEAE4;border-radius:20px;font-size:13px;font-weight:500;padding:9px 14px;color:rgba(23,23,23,0.7)">Mediterranean</span>
+                <span style="background:#EDEAE4;border-radius:20px;font-size:13px;font-weight:500;padding:9px 14px;color:rgba(23,23,23,0.7)">Budget</span>
+              </div>
+              <button type="button" style="appearance:none;border:none;cursor:pointer;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:15px;font-weight:600;padding:14px;border-radius:8px;min-height:48px;transition:background 180ms ease" style-hover="background:#C7412B">Generate Plan</button>
+            </div>
+            <div style="display:flex;align-items:baseline;justify-content:space-between"><span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Suggested day</span><span style="font-size:13px;color:rgba(23,23,23,0.5)">2,235 kcal · 172 g P</span></div>
+            <div style="display:flex;flex-direction:column;flex:none;gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden">
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Breakfast</span><span style="font-size:16px;font-weight:600">Scrambled eggs &amp; yogurt</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">470 kcal · 34 g P · 8 min</span></div><span style="font-size:20px;color:rgba(23,23,23,0.35)">›</span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Lunch</span><span style="font-size:16px;font-weight:600">Chicken pasta, tomato</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">720 kcal · 58 g P · 18 min</span></div><span style="font-size:20px;color:rgba(23,23,23,0.35)">›</span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Snack</span><span style="font-size:16px;font-weight:600">Yogurt, honey, walnuts</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">320 kcal · 24 g P · 2 min</span></div><span style="font-size:20px;color:rgba(23,23,23,0.35)">›</span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Dinner</span><span style="font-size:16px;font-weight:600">Chicken, greens, rice</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">725 kcal · 56 g P · 22 min</span></div><span style="font-size:20px;color:rgba(23,23,23,0.35)">›</span></div>
+            </div>
+            <div style="background:#E9E6E0;border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:10px">
+              <span style="font-size:11px;font-weight:600;padding:5px 9px;border-radius:5px;background:rgba(23,23,23,0.08);color:rgba(23,23,23,0.65);flex:none">Estimated</span>
+              <span style="font-size:13px;line-height:1.45;color:rgba(23,23,23,0.68)">Macros are estimates from your portions. Edit anything before you log it.</span>
+            </div>
+            <div style="margin-top:auto;padding-bottom:24px;display:flex;gap:10px">
+              <button type="button" style="appearance:none;cursor:pointer;flex:1;background:#FFFFFF;color:#171717;border:1px solid rgba(23,23,23,0.16);font-family:inherit;font-size:15px;font-weight:600;padding:15px;border-radius:8px;min-height:50px" style-hover="background:#EDEAE4">Shopping list</button>
+              <button type="button" style="appearance:none;border:none;cursor:pointer;flex:1;background:#171717;color:#FFFFFF;font-family:inherit;font-size:15px;font-weight:600;padding:15px;border-radius:8px;min-height:50px">Save day</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid rgba(23,23,23,0.16);padding-bottom:12px;max-width:1600px">
+      <span style="font-size:11px;font-weight:700;letter-spacing:0.16em;color:#E6533A">FLOW 04</span>
+      <h2 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.02em">Measure, learn, escalate</h2>
+      <span style="font-size:14px;color:rgba(23,23,23,0.5);margin-left:auto">Estimates labelled · health never diagnoses</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:40px">
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Progress">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">12 · /you/progress</span><span style="font-size:15px;font-weight:600">Progress</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 20px 0;display:flex;flex-direction:column;gap:16px">
+            <h3 style="margin:0;font-size:30px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">Progress</h3>
+            <div style="display:flex;gap:18px;border-bottom:1px solid rgba(23,23,23,0.12)">
+              <span style="font-size:14px;font-weight:600;padding-bottom:10px;border-bottom:2px solid #171717">Weight</span>
+              <span style="font-size:14px;font-weight:500;color:rgba(23,23,23,0.55);padding-bottom:10px">Waist</span>
+              <span style="font-size:14px;font-weight:500;color:rgba(23,23,23,0.55);padding-bottom:10px">Strength</span>
+              <span style="font-size:14px;font-weight:500;color:rgba(23,23,23,0.55);padding-bottom:10px">Training</span>
+            </div>
+            <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:16px">
+              <div style="display:flex;align-items:baseline;justify-content:space-between"><div style="display:flex;align-items:baseline;gap:10px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em">84.2 kg</span><span style="font-size:14px;font-weight:600;color:#2F6146">−2.4 kg</span></div><span style="font-size:12px;color:rgba(23,23,23,0.5)">3 months</span></div>
+              <svg viewBox="0 0 300 120" style="width:100%;height:120px" preserveAspectRatio="none">
+                <line x1="0" y1="8" x2="300" y2="8" stroke="rgba(23,23,23,0.08)"></line>
+                <line x1="0" y1="60" x2="300" y2="60" stroke="rgba(23,23,23,0.08)"></line>
+                <line x1="0" y1="112" x2="300" y2="112" stroke="rgba(23,23,23,0.08)"></line>
+                <polyline points="0,18 40,26 80,24 120,44 160,50 200,62 240,76 300,92" fill="none" stroke="#24463A" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"></polyline>
+                <circle cx="300" cy="92" r="4" fill="#24463A"></circle>
+              </svg>
+              <div style="display:flex;gap:0;border:1px solid rgba(23,23,23,0.14);border-radius:8px;overflow:hidden;width:max-content">
+                <span style="font-size:13px;font-weight:600;padding:9px 14px;background:#171717;color:#FFFFFF">3M</span>
+                <span style="font-size:13px;font-weight:600;padding:9px 14px;background:#FFFFFF;color:rgba(23,23,23,0.6);border-left:1px solid rgba(23,23,23,0.14)">6M</span>
+                <span style="font-size:13px;font-weight:600;padding:9px 14px;background:#FFFFFF;color:rgba(23,23,23,0.6);border-left:1px solid rgba(23,23,23,0.14)">All</span>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;flex:none;gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden">
+              <div style="background:#FFFFFF;padding:16px;display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Waist</span><span style="font-size:20px;font-weight:700;letter-spacing:-0.02em">95.2 cm</span><span style="font-size:12px;font-weight:600;color:#2F6146">↓ 2.8 cm</span></div>
+              <div style="background:#FFFFFF;padding:16px;display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Body fat</span><span style="font-size:20px;font-weight:700;letter-spacing:-0.02em">21.4%</span><span style="font-size:11px;font-weight:600;padding:4px 8px;border-radius:5px;background:rgba(23,23,23,0.06);color:rgba(23,23,23,0.6);width:max-content">Estimated</span></div>
+            </div>
+            <span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Photos · 12 weeks apart</span>
+            <div style="display:flex;gap:10px">
+              <div style="flex:1;aspect-ratio:3/4;border-radius:12px;overflow:hidden;position:relative"><image-slot id="aera-progress-a" shape="rect" fit="cover" placeholder="PROGRESS_DEMO_FRONT · May"></image-slot></div>
+              <div style="flex:1;aspect-ratio:3/4;border-radius:12px;overflow:hidden;position:relative"><image-slot id="aera-progress-b" shape="rect" fit="cover" placeholder="PROGRESS_DEMO_FRONT · Aug"></image-slot></div>
+            </div>
+            <span style="font-size:12px;color:rgba(23,23,23,0.5);padding-bottom:8px">Photos stay private to your account.</span>
+          </div>
+          <div style="flex:none;background:#FFFFFF;border-top:1px solid rgba(23,23,23,0.1);padding:10px 8px 20px;display:flex;justify-content:space-around">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">Home</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">Coach</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">Training</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">Nutrition</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:#171717;border-radius:5px"></span><span style="font-size:11px;font-weight:600">You</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Weekly Review">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">13 · /weekly-review</span><span style="font-size:15px;font-weight:600">Weekly review</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 22px 0;display:flex;flex-direction:column;gap:18px">
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Week 32 · 12–18 Aug</span>
+              <h3 style="margin:0;font-size:30px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">A steady week.</h3>
+            </div>
+            <div style="display:flex;flex-direction:column">
+              <div style="display:flex;align-items:baseline;justify-content:space-between;padding:15px 0;border-bottom:1px solid rgba(23,23,23,0.12)"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Body</span><span style="font-size:16px;font-weight:600">84.0 → 83.4 kg <span style="color:#2F6146">−0.6</span></span></div>
+              <div style="display:flex;align-items:baseline;justify-content:space-between;padding:15px 0;border-bottom:1px solid rgba(23,23,23,0.12)"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Waist</span><span style="font-size:16px;font-weight:600">96 → 95.2 cm</span></div>
+              <div style="display:flex;align-items:baseline;justify-content:space-between;padding:15px 0;border-bottom:1px solid rgba(23,23,23,0.12)"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Training</span><span style="font-size:16px;font-weight:600">4 / 4 completed</span></div>
+              <div style="display:flex;align-items:baseline;justify-content:space-between;padding:15px 0;border-bottom:1px solid rgba(23,23,23,0.12)"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Nutrition</span><span style="font-size:16px;font-weight:600">89% adherence</span></div>
+              <div style="display:flex;align-items:baseline;justify-content:space-between;padding:15px 0;border-bottom:1px solid rgba(23,23,23,0.12)"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Sleep</span><span style="font-size:16px;font-weight:600">6h 51m average</span></div>
+            </div>
+            <div style="background:#24463A;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px">
+              <span style="font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.6)">AERA says</span>
+              <p style="margin:0;font-size:16px;line-height:1.5;color:#FFFFFF">Consistency is strong. Weight is moving steadily while training performance stays stable. Sleep is the one lever left.</p>
+            </div>
+            <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Recommendation</span>
+              <span style="font-size:17px;font-weight:600;line-height:1.4">Keep the current plan for another week.</span>
+              <span style="font-size:14px;line-height:1.5;color:rgba(23,23,23,0.6)">Add 20 minutes of sleep before we touch calories.</span>
+            </div>
+            <div style="margin-top:auto;padding-bottom:24px;display:flex;gap:10px">
+              <button type="button" style="appearance:none;border:none;cursor:pointer;flex:1;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:15px;font-weight:600;padding:15px;border-radius:8px;min-height:50px;transition:background 180ms ease" style-hover="background:#C7412B">Keep plan</button>
+              <button type="button" style="appearance:none;cursor:pointer;flex:1;background:#FFFFFF;color:#171717;border:1px solid rgba(23,23,23,0.16);font-family:inherit;font-size:15px;font-weight:600;padding:15px;border-radius:8px;min-height:50px" style-hover="background:#EDEAE4">Discuss with AERA</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="AERA Health">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">14 · /health</span><span style="font-size:15px;font-weight:600">AERA Health</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 22px 0;display:flex;flex-direction:column;gap:18px">
+            <div style="display:flex;align-items:center;gap:14px"><span style="font-size:22px;color:rgba(23,23,23,0.6)">←</span><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#4E626B">AERA Health</span></div>
+            <h3 style="margin:0;font-size:30px;line-height:1.1;letter-spacing:-0.025em;font-weight:700;max-width:18ch">Something doesn't feel right?</h3>
+            <p style="margin:0;font-size:15px;line-height:1.55;color:rgba(23,23,23,0.65)">Describe it in your own words. AERA gives general guidance and tells you when to see a professional — never a diagnosis.</p>
+            <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:14px">
+              <div style="background:#F7F5F1;border:1px solid rgba(23,23,23,0.12);border-radius:8px;padding:14px;font-size:15px;line-height:1.5">My right knee aches when I squat, started three days ago.</div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">AERA asks</span>
+                <div style="display:flex;flex-direction:column;gap:8px">
+                  <div style="display:flex;justify-content:space-between;align-items:center;background:#F7F5F1;border-radius:8px;padding:13px 14px;min-height:46px"><span style="font-size:15px">Where exactly?</span><span style="font-size:14px;font-weight:600;color:rgba(23,23,23,0.5)">Front, below cap</span></div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;background:#F7F5F1;border-radius:8px;padding:13px 14px;min-height:46px"><span style="font-size:15px">Severity</span><span style="font-size:14px;font-weight:600;color:rgba(23,23,23,0.5)">3 / 10</span></div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;background:#F7F5F1;border-radius:8px;padding:13px 14px;min-height:46px"><span style="font-size:15px">Swelling or weakness?</span><span style="font-size:14px;font-weight:600;color:rgba(23,23,23,0.5)">No</span></div>
+                </div>
+              </div>
+            </div>
+            <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:12px">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#4E626B">General guidance</span>
+              <p style="margin:0;font-size:15px;line-height:1.55;color:rgba(23,23,23,0.85)">Mild load-related knee pain with no swelling often settles with less depth and load. I've swapped squats for split squats this week.</p>
+              <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.16);border-radius:8px;font-size:14px;font-weight:600;padding:11px 14px;min-height:44px;display:inline-flex;align-items:center;width:max-content">Adjust this week</span>
+            </div>
+            <div style="border:1px solid rgba(185,67,61,0.35);background:rgba(185,67,61,0.06);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#B9433D">When to seek care</span>
+              <span style="font-size:14px;line-height:1.5;color:rgba(23,23,23,0.8)">Locking, giving way, visible swelling or pain above 6/10 — see a clinician rather than adjusting training.</span>
+            </div>
+            <span style="font-size:12px;line-height:1.5;color:rgba(23,23,23,0.5);padding-bottom:20px;margin-top:auto">AERA is not a medical service and does not diagnose conditions.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+
+<div style="padding:0 56px 120px;display:flex;flex-direction:column;gap:72px">
+
+  <section style="display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid rgba(23,23,23,0.16);padding-bottom:12px;max-width:1600px">
+      <span style="font-size:11px;font-weight:700;letter-spacing:0.16em;color:#E6533A">FLOW 05</span>
+      <h2 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.02em">Access &amp; the rest of onboarding</h2>
+      <span style="font-size:14px;color:rgba(23,23,23,0.5);margin-left:auto">Steps 4–9 · optional data stays optional</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:40px">
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Login">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">15 · /login</span><span style="font-size:15px;font-weight:600">Sign in</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 24px 0;display:flex;flex-direction:column;gap:24px">
+            <span style="font-size:20px;font-weight:700;letter-spacing:0.16em">AERA</span>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <h3 style="margin:0;font-size:32px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">Welcome back.</h3>
+              <span style="font-size:15px;color:rgba(23,23,23,0.6)">Your plan is where you left it.</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Email</span>
+                <input type="text" value="george@example.com" style="appearance:none;font-family:inherit;font-size:16px;color:#171717;background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:15px 16px;min-height:52px">
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Password</span>
+                <input type="password" value="aeraaera" style="appearance:none;font-family:inherit;font-size:16px;color:#171717;background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:15px 16px;min-height:52px">
+              </div>
+              <span style="font-size:14px;font-weight:600;color:#B24A34">Forgot password?</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <button type="button" style="appearance:none;border:none;cursor:pointer;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#C7412B">Sign In</button>
+              <div style="display:flex;align-items:center;gap:14px"><span style="flex:1;height:1px;background:rgba(23,23,23,0.14)"></span><span style="font-size:13px;color:rgba(23,23,23,0.45)">or</span><span style="flex:1;height:1px;background:rgba(23,23,23,0.14)"></span></div>
+              <button type="button" style="appearance:none;cursor:pointer;background:#FFFFFF;color:#171717;border:1px solid rgba(23,23,23,0.16);font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px" style-hover="background:#EDEAE4">Continue with Google</button>
+            </div>
+            <div style="margin-top:auto;padding-bottom:28px;display:flex;justify-content:center;gap:8px"><span style="font-size:15px;color:rgba(23,23,23,0.6)">New to AERA?</span><span style="font-size:15px;font-weight:600;color:#B24A34">Create Account</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Sign up">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">16 · /signup</span><span style="font-size:15px;font-weight:600">Create account</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 24px 0;display:flex;flex-direction:column;gap:24px">
+            <span style="font-size:22px;color:rgba(23,23,23,0.6)">←</span>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <h3 style="margin:0;font-size:32px;line-height:1.1;letter-spacing:-0.025em;font-weight:700;max-width:16ch">Three fields, then your plan.</h3>
+              <span style="font-size:15px;color:rgba(23,23,23,0.6)">Onboarding takes about four minutes.</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">First name</span>
+                <input type="text" value="George" style="appearance:none;font-family:inherit;font-size:16px;color:#171717;background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:15px 16px;min-height:52px">
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Email</span>
+                <input type="text" value="george@example.com" style="appearance:none;font-family:inherit;font-size:16px;color:#171717;background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:15px 16px;min-height:52px">
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Password</span>
+                <input type="password" value="aeraaera" style="appearance:none;font-family:inherit;font-size:16px;color:#171717;background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:15px 16px;min-height:52px">
+                <span style="font-size:13px;color:rgba(23,23,23,0.5)">At least 8 characters.</span>
+              </div>
+            </div>
+            <button type="button" style="appearance:none;border:none;cursor:pointer;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#C7412B">Create Account</button>
+            <span style="font-size:13px;line-height:1.5;color:rgba(23,23,23,0.5)">Your measurements and photos stay private to your account. You can delete everything at any time.</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Onboarding Measurements">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">17 · Onboarding 4/10</span><span style="font-size:15px;font-weight:600">Body measurements</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 24px 0;display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;align-items:center;gap:14px"><span style="font-size:22px;color:rgba(23,23,23,0.6)">←</span><div style="flex:1;height:3px;background:#E9E6E0;border-radius:2px"><div style="width:40%;height:100%;background:#171717;border-radius:2px"></div></div><span style="font-size:13px;font-weight:600;color:rgba(23,23,23,0.5)">4/10</span></div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <h3 style="margin:0;font-size:30px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">Measurements</h3>
+              <span style="font-size:15px;line-height:1.5;color:rgba(23,23,23,0.6)">Optional. Waist alone already improves the plan — you can update these whenever you want.</span>
+            </div>
+            <div style="display:flex;flex-direction:column;flex:none;gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:10px;overflow:hidden">
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;align-items:center;justify-content:space-between"><span style="font-size:16px;font-weight:600">Waist</span><span style="font-size:16px;color:#171717">96 <span style="color:rgba(23,23,23,0.45);font-size:14px">cm</span></span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;align-items:center;justify-content:space-between"><span style="font-size:16px;font-weight:600">Neck</span><span style="font-size:16px;color:#171717">40 <span style="color:rgba(23,23,23,0.45);font-size:14px">cm</span></span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;align-items:center;justify-content:space-between"><span style="font-size:16px;font-weight:600">Chest</span><span style="font-size:16px;color:rgba(23,23,23,0.4)">Add</span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;align-items:center;justify-content:space-between"><span style="font-size:16px;font-weight:600">Arm</span><span style="font-size:16px;color:rgba(23,23,23,0.4)">Add</span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;align-items:center;justify-content:space-between"><span style="font-size:16px;font-weight:600">Thigh</span><span style="font-size:16px;color:rgba(23,23,23,0.4)">Add</span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;align-items:center;justify-content:space-between"><span style="font-size:16px;font-weight:600">Calf</span><span style="font-size:16px;color:rgba(23,23,23,0.4)">Add</span></div>
+            </div>
+            <div style="background:#E9E6E0;border-radius:10px;padding:14px 16px;display:flex;gap:10px;align-items:center"><span style="font-size:11px;font-weight:600;padding:5px 9px;border-radius:5px;background:rgba(23,23,23,0.08);color:rgba(23,23,23,0.65);flex:none">Estimated</span><span style="font-size:13px;line-height:1.45;color:rgba(23,23,23,0.68)">Waist and neck let AERA estimate body composition. It is an estimate, not a medical measurement.</span></div>
+            <div style="margin-top:auto;padding-bottom:26px;display:flex;flex-direction:column;gap:10px">
+              <button type="button" style="appearance:none;border:none;cursor:pointer;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#C7412B">Continue</button>
+              <button type="button" style="appearance:none;cursor:pointer;background:transparent;color:rgba(23,23,23,0.6);border:none;font-family:inherit;font-size:15px;font-weight:600;padding:12px;min-height:44px">Skip for now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Onboarding Photos">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">18 · Onboarding 5/10</span><span style="font-size:15px;font-weight:600">Progress photos</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 24px 0;display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;align-items:center;gap:14px"><span style="font-size:22px;color:rgba(23,23,23,0.6)">←</span><div style="flex:1;height:3px;background:#E9E6E0;border-radius:2px"><div style="width:50%;height:100%;background:#171717;border-radius:2px"></div></div><span style="font-size:13px;font-weight:600;color:rgba(23,23,23,0.5)">5/10</span></div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <h3 style="margin:0;font-size:30px;line-height:1.1;letter-spacing:-0.025em;font-weight:700;max-width:16ch">A starting point you can look back at</h3>
+              <span style="font-size:15px;line-height:1.5;color:rgba(23,23,23,0.6)">Optional and private by default. The scale moves slowly; photos show what it misses.</span>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+              <div style="display:flex;flex-direction:column;gap:8px"><div style="aspect-ratio:3/4;border-radius:12px;overflow:hidden;position:relative"><image-slot id="aera-onb-front" shape="rect" fit="cover" placeholder="Front"></image-slot></div><span style="font-size:13px;font-weight:600;color:rgba(23,23,23,0.6)">Front</span></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><div style="aspect-ratio:3/4;border-radius:12px;overflow:hidden;position:relative"><image-slot id="aera-onb-side" shape="rect" fit="cover" placeholder="Side"></image-slot></div><span style="font-size:13px;font-weight:600;color:rgba(23,23,23,0.6)">Side</span></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><div style="aspect-ratio:3/4;border-radius:12px;overflow:hidden;position:relative"><image-slot id="aera-onb-back" shape="rect" fit="cover" placeholder="Back"></image-slot></div><span style="font-size:13px;font-weight:600;color:rgba(23,23,23,0.6)">Back</span></div>
+            </div>
+            <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">How to shoot them</span>
+              <span style="font-size:14px;line-height:1.55;color:rgba(23,23,23,0.7)">Same spot, same light, same time of day. Neutral posture, arms relaxed. That's what makes the comparison honest.</span>
+            </div>
+            <div style="background:#E9E6E0;border-radius:10px;padding:14px 16px;display:flex;gap:10px;align-items:center"><span style="font-size:16px;flex:none">🔒</span><span style="font-size:13px;line-height:1.45;color:rgba(23,23,23,0.68)">Stored privately. Only you can see them, and you can delete them at any time.</span></div>
+            <div style="margin-top:auto;padding-bottom:26px;display:flex;flex-direction:column;gap:10px">
+              <button type="button" style="appearance:none;border:none;cursor:pointer;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#C7412B">Continue</button>
+              <button type="button" style="appearance:none;cursor:pointer;background:transparent;color:rgba(23,23,23,0.6);border:none;font-family:inherit;font-size:15px;font-weight:600;padding:12px;min-height:44px">Skip for now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Onboarding Activity">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">19 · Onboarding 6/10</span><span style="font-size:15px;font-weight:600">Activity level</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 24px 0;display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;align-items:center;gap:14px"><span style="font-size:22px;color:rgba(23,23,23,0.6)">←</span><div style="flex:1;height:3px;background:#E9E6E0;border-radius:2px"><div style="width:60%;height:100%;background:#171717;border-radius:2px"></div></div><span style="font-size:13px;font-weight:600;color:rgba(23,23,23,0.5)">6/10</span></div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <h3 style="margin:0;font-size:30px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">How active is your day?</h3>
+              <span style="font-size:15px;color:rgba(23,23,23,0.6)">Outside of training. This sets your calorie baseline.</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:4px"><span style="font-size:16px;font-weight:600">Sedentary</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">Desk work, little walking</span></div>
+              <div style="background:#171717;border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:4px"><span style="font-size:16px;font-weight:600;color:#FFFFFF">Lightly active</span><span style="font-size:13px;color:rgba(255,255,255,0.65)">Some walking, standing part of the day</span></div>
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:4px"><span style="font-size:16px;font-weight:600">Moderately active</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">On your feet most of the day</span></div>
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:4px"><span style="font-size:16px;font-weight:600">Very active</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">Physical job or constant movement</span></div>
+            </div>
+            <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:10px;padding:16px;display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:14px;color:rgba(23,23,23,0.6)">Estimated daily need</span><span style="font-size:18px;font-weight:700;letter-spacing:-0.02em">2,540 kcal</span></div>
+            <div style="margin-top:auto;padding-bottom:26px">
+              <button type="button" style="appearance:none;border:none;cursor:pointer;width:100%;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#C7412B">Continue</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Onboarding Training">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">20 · Onboarding 7/10</span><span style="font-size:15px;font-weight:600">Training setup</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 24px 0;display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;align-items:center;gap:14px"><span style="font-size:22px;color:rgba(23,23,23,0.6)">←</span><div style="flex:1;height:3px;background:#E9E6E0;border-radius:2px"><div style="width:70%;height:100%;background:#171717;border-radius:2px"></div></div><span style="font-size:13px;font-weight:600;color:rgba(23,23,23,0.5)">7/10</span></div>
+            <h3 style="margin:0;font-size:30px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">Where and how you train</h3>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Location</span>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <span style="background:#171717;color:#FFFFFF;border-radius:8px;font-size:15px;font-weight:600;padding:12px 16px;min-height:46px;display:flex;align-items:center">Home</span>
+                <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;font-size:15px;padding:12px 16px;min-height:46px;display:flex;align-items:center">Gym</span>
+                <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;font-size:15px;padding:12px 16px;min-height:46px;display:flex;align-items:center">Outdoors</span>
+                <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;font-size:15px;padding:12px 16px;min-height:46px;display:flex;align-items:center">Mixed</span>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Equipment</span>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <span style="background:#171717;color:#FFFFFF;border-radius:8px;font-size:15px;font-weight:600;padding:12px 16px;min-height:46px;display:flex;align-items:center">Dumbbells</span>
+                <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;font-size:15px;padding:12px 16px;min-height:46px;display:flex;align-items:center">Bands</span>
+                <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;font-size:15px;padding:12px 16px;min-height:46px;display:flex;align-items:center">Barbell</span>
+                <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;font-size:15px;padding:12px 16px;min-height:46px;display:flex;align-items:center">Full gym</span>
+                <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;font-size:15px;padding:12px 16px;min-height:46px;display:flex;align-items:center">None</span>
+              </div>
+            </div>
+            <div style="display:flex;gap:14px">
+              <div style="flex:1;display:flex;flex-direction:column;gap:10px">
+                <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Days / week</span>
+                <div style="display:flex;border:1px solid rgba(23,23,23,0.14);border-radius:8px;overflow:hidden;min-height:48px">
+                  <div style="flex:1;display:flex;align-items:center;justify-content:center;background:#FFFFFF;font-size:14px;color:rgba(23,23,23,0.6)">1–2</div>
+                  <div style="flex:1;display:flex;align-items:center;justify-content:center;background:#171717;color:#FFFFFF;font-size:14px;font-weight:600;border-left:1px solid rgba(23,23,23,0.14)">3–4</div>
+                  <div style="flex:1;display:flex;align-items:center;justify-content:center;background:#FFFFFF;font-size:14px;color:rgba(23,23,23,0.6);border-left:1px solid rgba(23,23,23,0.14)">5+</div>
+                </div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:10px">
+                <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Session</span>
+                <div style="display:flex;border:1px solid rgba(23,23,23,0.14);border-radius:8px;overflow:hidden;min-height:48px">
+                  <div style="flex:1;display:flex;align-items:center;justify-content:center;background:#FFFFFF;font-size:14px;color:rgba(23,23,23,0.6)">15</div>
+                  <div style="flex:1;display:flex;align-items:center;justify-content:center;background:#FFFFFF;font-size:14px;color:rgba(23,23,23,0.6);border-left:1px solid rgba(23,23,23,0.14)">30</div>
+                  <div style="flex:1;display:flex;align-items:center;justify-content:center;background:#171717;color:#FFFFFF;font-size:14px;font-weight:600;border-left:1px solid rgba(23,23,23,0.14)">45</div>
+                  <div style="flex:1;display:flex;align-items:center;justify-content:center;background:#FFFFFF;font-size:14px;color:rgba(23,23,23,0.6);border-left:1px solid rgba(23,23,23,0.14)">60+</div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:auto;padding-bottom:26px">
+              <button type="button" style="appearance:none;border:none;cursor:pointer;width:100%;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#C7412B">Continue</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Onboarding Nutrition">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">21 · Onboarding 8/10</span><span style="font-size:15px;font-weight:600">Nutrition preferences</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 24px 0;display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;align-items:center;gap:14px"><span style="font-size:22px;color:rgba(23,23,23,0.6)">←</span><div style="flex:1;height:3px;background:#E9E6E0;border-radius:2px"><div style="width:80%;height:100%;background:#171717;border-radius:2px"></div></div><span style="font-size:13px;font-weight:600;color:rgba(23,23,23,0.5)">8/10</span></div>
+            <h3 style="margin:0;font-size:30px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">How you eat</h3>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Dietary preference</span>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <span style="background:#171717;color:#FFFFFF;border-radius:8px;font-size:15px;font-weight:600;padding:12px 16px;min-height:46px;display:flex;align-items:center">Mediterranean</span>
+                <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;font-size:15px;padding:12px 16px;min-height:46px;display:flex;align-items:center">High protein</span>
+                <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;font-size:15px;padding:12px 16px;min-height:46px;display:flex;align-items:center">Vegetarian</span>
+                <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;font-size:15px;padding:12px 16px;min-height:46px;display:flex;align-items:center">Vegan</span>
+                <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;font-size:15px;padding:12px 16px;min-height:46px;display:flex;align-items:center">Low carb</span>
+              </div>
+            </div>
+            <div style="display:flex;gap:14px">
+              <div style="flex:1;display:flex;flex-direction:column;gap:8px"><span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Meals / day</span><div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:14px 16px;min-height:50px;display:flex;align-items:center;font-size:16px;font-weight:500">4</div></div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:8px"><span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Food budget</span><div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:14px 16px;min-height:50px;display:flex;align-items:center;font-size:16px;font-weight:500">Moderate</div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Avoided foods &amp; allergies</span>
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:14px 16px;min-height:76px;font-size:15px;line-height:1.5;color:rgba(23,23,23,0.85)">Lactose — low tolerance. No shellfish.</div>
+            </div>
+            <div style="background:#E9E6E0;border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:5px"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.55)">What AERA does with this</span><span style="font-size:13px;line-height:1.45;color:rgba(23,23,23,0.68)">Meal plans use foods you actually buy, and substitutions respect these limits.</span></div>
+            <div style="margin-top:auto;padding-bottom:26px">
+              <button type="button" style="appearance:none;border:none;cursor:pointer;width:100%;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#C7412B">Continue</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Onboarding Motivation">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">22 · Onboarding 9/10</span><span style="font-size:15px;font-weight:600">Motivation</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 24px 0;display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;align-items:center;gap:14px"><span style="font-size:22px;color:rgba(23,23,23,0.6)">←</span><div style="flex:1;height:3px;background:#E9E6E0;border-radius:2px"><div style="width:90%;height:100%;background:#171717;border-radius:2px"></div></div><span style="font-size:13px;font-weight:600;color:rgba(23,23,23,0.5)">9/10</span></div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <h3 style="margin:0;font-size:30px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">What matters most to you?</h3>
+              <span style="font-size:15px;color:rgba(23,23,23,0.6)">Pick as many as apply. AERA frames its feedback around these.</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <div style="background:#171717;border-radius:10px;padding:20px 16px;min-height:76px;display:flex;align-items:flex-end"><span style="font-size:16px;font-weight:600;color:#FFFFFF">Confidence</span></div>
+              <div style="background:#171717;border-radius:10px;padding:20px 16px;min-height:76px;display:flex;align-items:flex-end"><span style="font-size:16px;font-weight:600;color:#FFFFFF">Energy</span></div>
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:10px;padding:20px 16px;min-height:76px;display:flex;align-items:flex-end"><span style="font-size:16px;font-weight:500">Appearance</span></div>
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:10px;padding:20px 16px;min-height:76px;display:flex;align-items:flex-end"><span style="font-size:16px;font-weight:500">Strength</span></div>
+              <div style="background:#171717;border-radius:10px;padding:20px 16px;min-height:76px;display:flex;align-items:flex-end"><span style="font-size:16px;font-weight:600;color:#FFFFFF">Health</span></div>
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:10px;padding:20px 16px;min-height:76px;display:flex;align-items:flex-end"><span style="font-size:16px;font-weight:500">Performance</span></div>
+            </div>
+            <div style="background:#24463A;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.6)">AERA</span>
+              <span style="font-size:16px;line-height:1.5;color:#FFFFFF">Then I'll report energy and how you feel alongside the numbers — not just weight.</span>
+            </div>
+            <div style="margin-top:auto;padding-bottom:26px">
+              <button type="button" style="appearance:none;border:none;cursor:pointer;width:100%;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#C7412B">See my plan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid rgba(23,23,23,0.16);padding-bottom:12px;max-width:1600px">
+      <span style="font-size:11px;font-weight:700;letter-spacing:0.16em;color:#E6533A">FLOW 06</span>
+      <h2 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.02em">Detail screens</h2>
+      <span style="font-size:14px;color:rgba(23,23,23,0.5);margin-left:auto">Workout · exercise · meal logging · body · goals · settings</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:40px">
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Workout Detail">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">23 · /training/workout/:id</span><span style="font-size:15px;font-weight:600">Workout detail</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 20px 0;display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-size:22px;color:rgba(23,23,23,0.6)">←</span><span style="font-size:14px;font-weight:600;color:#B24A34">Alternatives</span></div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#24463A">Training · today</span>
+              <h3 style="margin:0;font-size:30px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">Upper Body</h3>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);flex:none;gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:10px;overflow:hidden;flex:none">
+              <div style="background:#FFFFFF;padding:14px 12px;display:flex;flex-direction:column;gap:4px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Duration</span><span style="font-size:17px;font-weight:700">45 min</span></div>
+              <div style="background:#FFFFFF;padding:14px 12px;display:flex;flex-direction:column;gap:4px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Exercises</span><span style="font-size:17px;font-weight:700">5</span></div>
+              <div style="background:#FFFFFF;padding:14px 12px;display:flex;flex-direction:column;gap:4px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Level</span><span style="font-size:17px;font-weight:700">Moderate</span></div>
+            </div>
+            <span style="font-size:14px;color:rgba(23,23,23,0.6)">Chest, shoulders, back, triceps, biceps · Dumbbells</span>
+            <div style="display:flex;flex-direction:column;flex:none;gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden">
+              <div style="background:#FFFFFF;padding:12px;display:flex;gap:12px;align-items:center"><div style="width:56px;height:56px;flex:none;border-radius:8px;overflow:hidden;position:relative"><image-slot id="aera-wd-1" shape="rect" fit="cover" placeholder="Push-up"></image-slot></div><div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:600">Push-up</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">3 × 12 · chest, triceps</span></div><span style="font-size:20px;color:rgba(23,23,23,0.3)">›</span></div>
+              <div style="background:#FFFFFF;padding:12px;display:flex;gap:12px;align-items:center"><div style="width:56px;height:56px;flex:none;border-radius:8px;overflow:hidden;position:relative"><image-slot id="aera-wd-2" shape="rect" fit="cover" placeholder="Row"></image-slot></div><div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:600">Dumbbell Row</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">3 × 10 · back, biceps</span></div><span style="font-size:20px;color:rgba(23,23,23,0.3)">›</span></div>
+              <div style="background:#FFFFFF;padding:12px;display:flex;gap:12px;align-items:center"><div style="width:56px;height:56px;flex:none;border-radius:8px;overflow:hidden;position:relative"><image-slot id="aera-wd-3" shape="rect" fit="cover" placeholder="Press"></image-slot></div><div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:600">Shoulder Press</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">3 × 10 · shoulders</span></div><span style="font-size:20px;color:rgba(23,23,23,0.3)">›</span></div>
+              <div style="background:#FFFFFF;padding:12px;display:flex;gap:12px;align-items:center"><div style="width:56px;height:56px;flex:none;border-radius:8px;overflow:hidden;position:relative"><image-slot id="aera-wd-4" shape="rect" fit="cover" placeholder="Curl"></image-slot></div><div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:600">Biceps Curl</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">2 × 12 · biceps</span></div><span style="font-size:20px;color:rgba(23,23,23,0.3)">›</span></div>
+              <div style="background:#FFFFFF;padding:12px;display:flex;gap:12px;align-items:center"><div style="width:56px;height:56px;flex:none;border-radius:8px;overflow:hidden;position:relative"><image-slot id="aera-wd-5" shape="rect" fit="cover" placeholder="Plank"></image-slot></div><div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:600">Plank</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">3 × 45s · core</span></div><span style="font-size:20px;color:rgba(23,23,23,0.3)">›</span></div>
+            </div>
+            <div style="padding-bottom:24px">
+              <button type="button" style="appearance:none;border:none;cursor:pointer;width:100%;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:17px;border-radius:8px;min-height:54px;transition:background 180ms ease" style-hover="background:#C7412B">Start Workout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Exercise Detail">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">24 · /training/exercise/:id</span><span style="font-size:15px;font-weight:600">Exercise detail</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 20px 0;display:flex;flex-direction:column;gap:16px">
+            <span style="font-size:22px;color:rgba(23,23,23,0.6)">←</span>
+            <sc-if value="{{ showMedia }}" hint-placeholder-val="{{ true }}">
+              <div style="flex:none;height:280px;border-radius:14px;overflow:hidden;position:relative">
+                <image-slot id="aera-ex-video" shape="rect" fit="cover" placeholder="TRAINING_DUMBBELL_ROW · 4:5 video"></image-slot>
+                <div style="position:absolute;inset:auto 0 0;padding:14px 16px;background:linear-gradient(180deg,rgba(23,23,23,0) 0%,rgba(23,23,23,0.7) 100%);pointer-events:none;display:flex;justify-content:space-between;align-items:flex-end"><span style="font-size:13px;font-weight:600;color:#FFFFFF">Flat back, pull to the hip</span><span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.8)">▶ 10s</span></div>
+              </div>
+            </sc-if>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#24463A">Back · intermediate</span>
+              <h3 style="margin:0;font-size:26px;line-height:1.12;letter-spacing:-0.02em;font-weight:700">Dumbbell Row</h3>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);flex:none;gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:10px;overflow:hidden;flex:none">
+              <div style="background:#FFFFFF;padding:12px 8px;display:flex;flex-direction:column;gap:3px"><span style="font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Sets</span><span style="font-size:16px;font-weight:700">3</span></div>
+              <div style="background:#FFFFFF;padding:12px 8px;display:flex;flex-direction:column;gap:3px"><span style="font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Reps</span><span style="font-size:16px;font-weight:700">10</span></div>
+              <div style="background:#FFFFFF;padding:12px 8px;display:flex;flex-direction:column;gap:3px"><span style="font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Rest</span><span style="font-size:16px;font-weight:700">75s</span></div>
+              <div style="background:#FFFFFF;padding:12px 8px;display:flex;flex-direction:column;gap:3px"><span style="font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Load</span><span style="font-size:16px;font-weight:700">16kg</span></div>
+            </div>
+            <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">How to do it</span>
+              <div style="display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.5;color:rgba(23,23,23,0.82)">
+                <span>1 · Hinge forward, support your free hand, keep the spine neutral.</span>
+                <span>2 · Pull the dumbbell to your hip, elbow close to the body.</span>
+                <span>3 · Lower under control for two seconds. Don't rotate the torso.</span>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Alternatives</span>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.16);border-radius:8px;font-size:14px;font-weight:600;padding:11px 14px;min-height:44px;display:flex;align-items:center">Band row</span>
+                <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.16);border-radius:8px;font-size:14px;font-weight:600;padding:11px 14px;min-height:44px;display:flex;align-items:center">Inverted row</span>
+                <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.16);border-radius:8px;font-size:14px;font-weight:600;padding:11px 14px;min-height:44px;display:flex;align-items:center">Renegade row</span>
+              </div>
+            </div>
+            <div style="padding-bottom:24px">
+              <button type="button" style="appearance:none;border:none;cursor:pointer;width:100%;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#C7412B">Start Set</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Meal Logging">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">25 · /nutrition/log</span><span style="font-size:15px;font-weight:600">Meal logging</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 20px 0;display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;align-items:center;gap:14px"><span style="font-size:22px;color:rgba(23,23,23,0.6)">✕</span><h3 style="margin:0;font-size:24px;line-height:1.1;letter-spacing:-0.02em;font-weight:700">Log a meal</h3></div>
+            <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Write it as you'd say it</span>
+              <div style="background:#F7F5F1;border:1px solid rgba(23,23,23,0.12);border-radius:8px;padding:14px;font-size:16px;line-height:1.5">2 eggs, one pita and Greek yogurt</div>
+              <button type="button" style="appearance:none;border:none;cursor:pointer;background:#171717;color:#FFFFFF;font-family:inherit;font-size:15px;font-weight:600;padding:14px;border-radius:8px;min-height:48px">Parse items</button>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11px;font-weight:600;padding:5px 9px;border-radius:5px;background:rgba(23,23,23,0.06);color:rgba(23,23,23,0.65)">Estimated</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">Edit any quantity before saving</span></div>
+            <div style="display:flex;flex-direction:column;flex:none;gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden">
+              <div style="background:#FFFFFF;padding:14px 16px;display:flex;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:16px;font-weight:600">Eggs</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">2 large · 156 kcal · 13 g P</span></div><span style="font-size:14px;font-weight:600;color:#B24A34">Edit</span></div>
+              <div style="background:#FFFFFF;padding:14px 16px;display:flex;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:16px;font-weight:600">Pita bread</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">1 piece · 210 kcal · 7 g P</span></div><span style="font-size:14px;font-weight:600;color:#B24A34">Edit</span></div>
+              <div style="background:#FFFFFF;padding:14px 16px;display:flex;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:16px;font-weight:600">Greek yogurt 2%</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">200 g · 146 kcal · 20 g P</span></div><span style="font-size:14px;font-weight:600;color:#B24A34">Edit</span></div>
+              <div style="background:#F7F5F1;padding:14px 16px;display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:15px;font-weight:600">Total</span><span style="font-size:16px;font-weight:700">512 kcal · 40 g P</span></div>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.16);border-radius:8px;font-size:14px;font-weight:600;padding:11px 14px;min-height:44px;display:flex;align-items:center">Add item</span>
+              <span style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.16);border-radius:8px;font-size:14px;font-weight:600;padding:11px 14px;min-height:44px;display:flex;align-items:center">Search foods</span>
+            </div>
+            <span style="font-size:13px;line-height:1.5;color:rgba(23,23,23,0.5)">Estimates come from a food database and your wording — they are not laboratory measurements.</span>
+            <div style="padding-bottom:24px;display:flex;gap:10px">
+              <div style="flex:1;display:flex;flex-direction:column;gap:8px"><span style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Meal</span><div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:13px 14px;min-height:48px;display:flex;align-items:center;font-size:15px;font-weight:500">Breakfast</div></div>
+              <button type="button" style="appearance:none;border:none;cursor:pointer;flex:1;align-self:flex-end;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:15px;font-weight:600;padding:14px;border-radius:8px;min-height:48px;transition:background 180ms ease" style-hover="background:#C7412B">Save meal</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Measurements">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">26 · /you/measurements</span><span style="font-size:15px;font-weight:600">Measurements</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 20px 0;display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;align-items:center;justify-content:space-between"><div style="display:flex;align-items:center;gap:14px"><span style="font-size:22px;color:rgba(23,23,23,0.6)">←</span><h3 style="margin:0;font-size:24px;line-height:1.1;letter-spacing:-0.02em;font-weight:700">Measurements</h3></div><span style="font-size:14px;font-weight:600;color:#B24A34">Add</span></div>
+            <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:18px;display:flex;align-items:baseline;justify-content:space-between"><div style="display:flex;flex-direction:column;gap:5px"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Weight · today</span><span style="font-size:28px;font-weight:700;letter-spacing:-0.02em">84.2 kg</span></div><span style="font-size:14px;font-weight:600;color:#2F6146">↓ 0.2 this week</span></div>
+            <div style="display:flex;flex-direction:column;flex:none;gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden">
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:16px;font-weight:600">Waist</span><div style="display:flex;align-items:baseline;gap:10px"><span style="font-size:16px">95.2 cm</span><span style="font-size:13px;font-weight:600;color:#2F6146">↓ 0.8</span></div></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:16px;font-weight:600">Neck</span><div style="display:flex;align-items:baseline;gap:10px"><span style="font-size:16px">40 cm</span><span style="font-size:13px;color:rgba(23,23,23,0.45)">—</span></div></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:16px;font-weight:600">Chest</span><div style="display:flex;align-items:baseline;gap:10px"><span style="font-size:16px">104 cm</span><span style="font-size:13px;font-weight:600;color:rgba(23,23,23,0.45)">+0.2</span></div></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:16px;font-weight:600">Arm</span><div style="display:flex;align-items:baseline;gap:10px"><span style="font-size:16px">34.5 cm</span><span style="font-size:13px;font-weight:600;color:#2F6146">+0.3</span></div></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:16px;font-weight:600">Thigh</span><div style="display:flex;align-items:baseline;gap:10px"><span style="font-size:16px">58 cm</span><span style="font-size:13px;color:rgba(23,23,23,0.45)">—</span></div></div>
+            </div>
+            <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:14px">
+              <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Waist · 3 months</span><span style="font-size:13px;color:rgba(23,23,23,0.5)">98 → 95.2 cm</span></div>
+              <svg viewBox="0 0 300 100" style="width:100%;height:100px" preserveAspectRatio="none">
+                <line x1="0" y1="8" x2="300" y2="8" stroke="rgba(23,23,23,0.08)"></line>
+                <line x1="0" y1="50" x2="300" y2="50" stroke="rgba(23,23,23,0.08)"></line>
+                <line x1="0" y1="92" x2="300" y2="92" stroke="rgba(23,23,23,0.08)"></line>
+                <polyline points="0,14 50,22 100,30 150,44 200,56 250,68 300,80" fill="none" stroke="#6F8792" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"></polyline>
+                <circle cx="300" cy="80" r="4" fill="#6F8792"></circle>
+              </svg>
+            </div>
+            <span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">History</span>
+            <div style="display:flex;flex-direction:column;gap:8px;padding-bottom:24px">
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:10px;padding:13px 16px;display:flex;justify-content:space-between"><span style="font-size:15px">18 Aug</span><span style="font-size:15px;color:rgba(23,23,23,0.65)">84.2 kg · 95.2 cm</span></div>
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:10px;padding:13px 16px;display:flex;justify-content:space-between"><span style="font-size:15px">11 Aug</span><span style="font-size:15px;color:rgba(23,23,23,0.65)">84.4 kg · 96.0 cm</span></div>
+              <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:10px;padding:13px 16px;display:flex;justify-content:space-between"><span style="font-size:15px">4 Aug</span><span style="font-size:15px;color:rgba(23,23,23,0.65)">85.0 kg · 96.4 cm</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Goals">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">27 · /you/goals</span><span style="font-size:15px;font-weight:600">Goals</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 20px 0;display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;align-items:center;justify-content:space-between"><div style="display:flex;align-items:center;gap:14px"><span style="font-size:22px;color:rgba(23,23,23,0.6)">←</span><h3 style="margin:0;font-size:24px;line-height:1.1;letter-spacing:-0.02em;font-weight:700">Goals</h3></div><span style="font-size:14px;font-weight:600;color:#B24A34">Edit</span></div>
+            <div style="background:#24463A;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:16px">
+              <span style="font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.6)">Primary goal</span>
+              <span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#FFFFFF">Lose fat</span>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <div style="height:6px;background:rgba(255,255,255,0.2);border-radius:3px"><div style="width:38%;height:100%;background:#FFFFFF;border-radius:3px"></div></div>
+                <div style="display:flex;justify-content:space-between"><span style="font-size:13px;color:rgba(255,255,255,0.7)">84.2 kg now</span><span style="font-size:13px;color:rgba(255,255,255,0.7)">78 kg target</span></div>
+              </div>
+              <span style="font-size:14px;line-height:1.5;color:rgba(255,255,255,0.8)">On the current rate: late February. That is 0.45 kg per week — a safe pace.</span>
+            </div>
+            <div style="display:flex;flex-direction:column;flex:none;gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden">
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Secondary</span><span style="font-size:16px;font-weight:600">Build muscle</span></div><span style="font-size:13px;color:rgba(23,23,23,0.55)">Keep strength up</span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Waist target</span><span style="font-size:16px;font-weight:600">90 cm</span></div><span style="font-size:13px;color:rgba(23,23,23,0.55)">95.2 now</span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Training</span><span style="font-size:16px;font-weight:600">4 days / week</span></div><span style="font-size:13px;color:rgba(23,23,23,0.55)">6-week streak</span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Protein</span><span style="font-size:16px;font-weight:600">170 g / day</span></div><span style="font-size:13px;color:rgba(23,23,23,0.55)">89% adherence</span></div>
+            </div>
+            <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">AERA on pace</span>
+              <span style="font-size:15px;line-height:1.55;color:rgba(23,23,23,0.82)">A faster target is possible but costs muscle and consistency. If you want to move sooner, I'd add a walk rather than cut calories again.</span>
+            </div>
+            <div style="padding-bottom:24px;display:flex;gap:10px">
+              <button type="button" style="appearance:none;cursor:pointer;flex:1;background:#FFFFFF;color:#171717;border:1px solid rgba(23,23,23,0.16);font-family:inherit;font-size:15px;font-weight:600;padding:15px;border-radius:8px;min-height:50px" style-hover="background:#EDEAE4">Change target</button>
+              <button type="button" style="appearance:none;border:none;cursor:pointer;flex:1;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:15px;font-weight:600;padding:15px;border-radius:8px;min-height:50px;transition:background 180ms ease" style-hover="background:#C7412B">Ask AERA</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Profile">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">28 · /you</span><span style="font-size:15px;font-weight:600">Profile &amp; settings</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 20px 0;display:flex;flex-direction:column;gap:16px">
+            <h3 style="margin:0;font-size:30px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">You</h3>
+            <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:18px;display:flex;align-items:center;gap:16px">
+              <span style="width:52px;height:52px;flex:none;border-radius:50%;background:#E9E6E0;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600">G</span>
+              <div style="flex:1;display:flex;flex-direction:column;gap:3px"><span style="font-size:18px;font-weight:600">George</span><span style="font-size:14px;color:rgba(23,23,23,0.6)">34 · 170 cm · Lose fat</span></div>
+              <span style="font-size:14px;font-weight:600;color:#B24A34">Edit</span>
+            </div>
+            <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Body</span>
+            <div style="display:flex;flex-direction:column;flex:none;gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden">
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between"><span style="font-size:16px">Measurements</span><span style="font-size:15px;color:rgba(23,23,23,0.5)">7 tracked ›</span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between"><span style="font-size:16px">Progress photos</span><span style="font-size:15px;color:rgba(23,23,23,0.5)">Private ›</span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between"><span style="font-size:16px">Body composition</span><span style="font-size:11px;font-weight:600;padding:5px 9px;border-radius:5px;background:rgba(23,23,23,0.06);color:rgba(23,23,23,0.6)">Estimated</span></div>
+            </div>
+            <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Plan &amp; lifestyle</span>
+            <div style="display:flex;flex-direction:column;flex:none;gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden">
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between"><span style="font-size:16px">Goals</span><span style="font-size:15px;color:rgba(23,23,23,0.5)">Lose fat ›</span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between"><span style="font-size:16px">Training preferences</span><span style="font-size:15px;color:rgba(23,23,23,0.5)">4 days ›</span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between"><span style="font-size:16px">Nutrition preferences</span><span style="font-size:15px;color:rgba(23,23,23,0.5)">Mediterranean ›</span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between"><span style="font-size:16px">Weekly Review</span><span style="font-size:15px;color:rgba(23,23,23,0.5)">Mondays ›</span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between"><span style="font-size:16px">AERA Health</span><span style="font-size:15px;color:rgba(23,23,23,0.5)">›</span></div>
+            </div>
+            <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Settings</span>
+            <div style="display:flex;flex-direction:column;flex:none;gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden">
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between"><span style="font-size:16px">Units</span><span style="font-size:15px;color:rgba(23,23,23,0.5)">Metric ›</span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:16px">Notifications</span><span style="width:44px;height:26px;border-radius:13px;background:#24463A;position:relative;flex:none"><span style="position:absolute;top:3px;right:3px;width:20px;height:20px;border-radius:50%;background:#FFFFFF"></span></span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between"><span style="font-size:16px">Privacy</span><span style="font-size:15px;color:rgba(23,23,23,0.5)">›</span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between"><span style="font-size:16px">AI preferences</span><span style="font-size:15px;color:rgba(23,23,23,0.5)">›</span></div>
+              <div style="background:#FFFFFF;padding:15px 16px;display:flex;justify-content:space-between"><span style="font-size:16px">Subscription</span><span style="font-size:15px;color:rgba(23,23,23,0.5)">Free ›</span></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px;padding-bottom:24px">
+              <button type="button" style="appearance:none;cursor:pointer;background:#FFFFFF;color:#171717;border:1px solid rgba(23,23,23,0.16);font-family:inherit;font-size:15px;font-weight:600;padding:15px;border-radius:8px;min-height:50px" style-hover="background:#EDEAE4">Reset Demo Data</button>
+              <button type="button" style="appearance:none;cursor:pointer;background:transparent;color:#B9433D;border:1px solid rgba(185,67,61,0.4);font-family:inherit;font-size:15px;font-weight:600;padding:15px;border-radius:8px;min-height:50px" style-hover="background:rgba(185,67,61,0.06)">Delete account</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid rgba(23,23,23,0.16);padding-bottom:12px;max-width:1600px">
+      <span style="font-size:11px;font-weight:700;letter-spacing:0.16em;color:#E6533A">FLOW 07</span>
+      <h2 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.02em">Empty, loading, error</h2>
+      <span style="font-size:14px;color:rgba(23,23,23,0.5);margin-left:auto">Every flow needs all three · empty states coach, they don't apologise</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:40px">
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Empty state">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">29 · Empty</span><span style="font-size:15px;font-weight:600">Day one</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 20px 0;display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <h3 style="margin:0;font-size:30px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">Good morning, George</h3>
+              <span style="font-size:15px;color:rgba(23,23,23,0.6)">Day one. Let's set the baseline.</span>
+            </div>
+            <div style="background:#24463A;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px">
+              <span style="font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.6)">AERA Insight</span>
+              <p style="margin:0;font-size:16px;line-height:1.5;color:#FFFFFF">I don't have history yet. Three days of check-ins is enough for me to start adapting your plan.</p>
+            </div>
+            <div style="border:1px dashed rgba(23,23,23,0.22);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:10px">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">No measurements yet</span>
+              <span style="font-size:17px;font-weight:600;line-height:1.4">Start tracking your body to see your progress.</span>
+              <button type="button" style="appearance:none;border:none;cursor:pointer;width:max-content;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:14px;font-weight:600;padding:12px 16px;border-radius:8px;min-height:44px;transition:background 180ms ease" style-hover="background:#C7412B">Add Measurement</button>
+            </div>
+            <div style="border:1px dashed rgba(23,23,23,0.22);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:10px">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">No workouts yet</span>
+              <span style="font-size:17px;font-weight:600;line-height:1.4">Complete your first workout and AERA will start learning your training patterns.</span>
+              <button type="button" style="appearance:none;cursor:pointer;width:max-content;background:#FFFFFF;color:#171717;border:1px solid rgba(23,23,23,0.16);font-family:inherit;font-size:14px;font-weight:600;padding:12px 16px;border-radius:8px;min-height:44px" style-hover="background:#EDEAE4">See today's session</button>
+            </div>
+            <div style="border:1px dashed rgba(23,23,23,0.22);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:10px">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">No meals logged</span>
+              <span style="font-size:17px;font-weight:600;line-height:1.4">Log your first meal to start understanding your nutrition.</span>
+              <button type="button" style="appearance:none;cursor:pointer;width:max-content;background:#FFFFFF;color:#171717;border:1px solid rgba(23,23,23,0.16);font-family:inherit;font-size:14px;font-weight:600;padding:12px 16px;border-radius:8px;min-height:44px" style-hover="background:#EDEAE4">Log a meal</button>
+            </div>
+            <span style="font-size:13px;line-height:1.5;color:rgba(23,23,23,0.5);padding-bottom:20px">Your first weekly review appears after a few days of use.</span>
+          </div>
+          <div style="flex:none;background:#FFFFFF;border-top:1px solid rgba(23,23,23,0.1);padding:10px 8px 20px;display:flex;justify-content:space-around">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:#171717;border-radius:5px"></span><span style="font-size:11px;font-weight:600">Home</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">Coach</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">Training</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">Nutrition</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;background:rgba(23,23,23,0.22);border-radius:5px"></span><span style="font-size:11px;color:rgba(23,23,23,0.55)">You</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Loading">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">30 · Loading</span><span style="font-size:15px;font-weight:600">Skeleton</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 20px 0;display:flex;flex-direction:column;gap:18px">
+            <div style="display:flex;flex-direction:column;gap:10px"><span style="width:70%;height:28px;background:#E9E6E0;border-radius:6px"></span><span style="width:45%;height:16px;background:#E9E6E0;border-radius:5px"></span></div>
+            <div style="flex:none;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(23,23,23,0.1);border:1px solid rgba(23,23,23,0.1);border-radius:12px;overflow:hidden">
+              <div style="background:#FFFFFF;padding:16px 12px;display:flex;flex-direction:column;gap:8px"><span style="width:60%;height:9px;background:#E9E6E0;border-radius:4px"></span><span style="width:80%;height:18px;background:#E9E6E0;border-radius:5px"></span></div>
+              <div style="background:#FFFFFF;padding:16px 12px;display:flex;flex-direction:column;gap:8px"><span style="width:60%;height:9px;background:#E9E6E0;border-radius:4px"></span><span style="width:80%;height:18px;background:#E9E6E0;border-radius:5px"></span></div>
+              <div style="background:#FFFFFF;padding:16px 12px;display:flex;flex-direction:column;gap:8px"><span style="width:60%;height:9px;background:#E9E6E0;border-radius:4px"></span><span style="width:80%;height:18px;background:#E9E6E0;border-radius:5px"></span></div>
+              <div style="background:#FFFFFF;padding:16px 12px;display:flex;flex-direction:column;gap:8px"><span style="width:60%;height:9px;background:#E9E6E0;border-radius:4px"></span><span style="width:80%;height:18px;background:#E9E6E0;border-radius:5px"></span></div>
+              <div style="background:#FFFFFF;padding:16px 12px;display:flex;flex-direction:column;gap:8px;grid-column:span 2"><span style="width:40%;height:9px;background:#E9E6E0;border-radius:4px"></span><span style="width:65%;height:18px;background:#E9E6E0;border-radius:5px"></span></div>
+            </div>
+            <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.1);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px">
+              <span style="width:30%;height:9px;background:#E9E6E0;border-radius:4px"></span>
+              <span style="width:100%;height:14px;background:#E9E6E0;border-radius:5px"></span>
+              <span style="width:92%;height:14px;background:#E9E6E0;border-radius:5px"></span>
+              <span style="width:60%;height:14px;background:#E9E6E0;border-radius:5px"></span>
+              <span style="width:34%;height:40px;background:#E9E6E0;border-radius:8px;margin-top:6px"></span>
+            </div>
+            <div style="flex:none;background:#FFFFFF;border:1px solid rgba(23,23,23,0.1);border-radius:12px;overflow:hidden;display:flex">
+              <span style="width:104px;height:132px;background:#E9E6E0;flex:none"></span>
+              <div style="flex:1;padding:16px;display:flex;flex-direction:column;gap:10px"><span style="width:40%;height:9px;background:#E9E6E0;border-radius:4px"></span><span style="width:75%;height:20px;background:#E9E6E0;border-radius:5px"></span><span style="width:60%;height:13px;background:#E9E6E0;border-radius:4px"></span><span style="width:70%;height:38px;background:#E9E6E0;border-radius:8px;margin-top:auto"></span></div>
+            </div>
+            <span style="font-size:13px;color:rgba(23,23,23,0.45);text-align:center">Skeletons match the real layout — no spinners on data screens.</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px" data-screen-label="Error">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.45)">31 · Error</span><span style="font-size:15px;font-weight:600">Coach unavailable</span></div>
+        <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(23,23,23,0.08)">
+          <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600"><span>9:41</span><span>ᯤ  ⏻</span></div>
+          <div style="flex:none;padding:6px 22px 16px;border-bottom:1px solid rgba(23,23,23,0.1);display:flex;flex-direction:column;gap:2px">
+            <span style="font-size:20px;font-weight:700;letter-spacing:0.14em">AERA</span>
+            <span style="font-size:14px;color:rgba(23,23,23,0.6)">Your personal coach.</span>
+          </div>
+          <div style="flex:1;overflow-y:auto;min-height:0;padding:18px 20px;display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;justify-content:flex-end"><div style="background:#171717;color:#FFFFFF;font-size:15px;line-height:1.5;padding:13px 16px;border-radius:14px 14px 4px 14px;max-width:80%">Why has my weight stopped dropping?</div></div>
+            <div style="background:#FFFFFF;border:1px solid rgba(185,67,61,0.35);border-radius:14px 14px 14px 4px;padding:16px;display:flex;flex-direction:column;gap:12px;max-width:92%">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#B9433D">Couldn't reach the coach</span>
+              <span style="font-size:15px;line-height:1.55;color:rgba(23,23,23,0.85)">Your data is saved. I just can't answer right now.</span>
+              <div style="display:flex;gap:10px;flex-wrap:wrap">
+                <button type="button" style="appearance:none;border:none;cursor:pointer;background:{{ accent }};color:#FFFFFF;font-family:inherit;font-size:14px;font-weight:600;padding:12px 16px;border-radius:8px;min-height:44px;transition:background 180ms ease" style-hover="background:#C7412B">Retry</button>
+                <button type="button" style="appearance:none;cursor:pointer;background:#FFFFFF;color:#171717;border:1px solid rgba(23,23,23,0.16);font-family:inherit;font-size:14px;font-weight:600;padding:12px 16px;border-radius:8px;min-height:44px" style-hover="background:#EDEAE4">See last week's review</button>
+              </div>
+            </div>
+            <div style="background:#E9E6E0;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.55)">Fallback, not a dead end</span>
+              <span style="font-size:14px;line-height:1.55;color:rgba(23,23,23,0.72)">Weight has been flat for 9 days while waist is down 0.6 cm — the numbers are still here without the AI. Plateaus of under two weeks usually need no change.</span>
+            </div>
+            <div style="background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:16px;display:flex;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:15px;font-weight:600">Offline check-in</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">Saves locally, syncs later</span></div><span style="font-size:14px;font-weight:600;color:#B24A34">Open →</span></div>
+          </div>
+          <div style="flex:none;background:#FFFFFF;border-top:1px solid rgba(23,23,23,0.1);padding:12px 16px 22px;display:flex;gap:10px;align-items:center">
+            <input type="text" placeholder="Ask AERA anything" style="flex:1;appearance:none;font-family:inherit;font-size:15px;color:#171717;background:#F7F5F1;border:1px solid rgba(23,23,23,0.12);border-radius:22px;padding:13px 16px;min-height:46px">
+            <button type="button" style="appearance:none;border:none;cursor:pointer;background:#E9E6E0;color:rgba(23,23,23,0.4);font-family:inherit;font-size:15px;font-weight:600;width:46px;height:46px;border-radius:50%;flex:none">↑</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accent&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#E6533A&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#E6533A&quot;, &quot;#24463A&quot;, &quot;#6F8792&quot;], &quot;section&quot;: &quot;Theme&quot;},
+  &quot;showMedia&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Content&quot;}
+}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      accent: this.props.accent ?? '#E6533A',
+      showMedia: this.props.showMedia ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  body { margin: 0; background: #EDEAE4; color: #171717; font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #B24A34; text-decoration: none; }
+  a:hover { color: #E6533A; }
+  *:focus-visible { outline: 2px solid #E6533A; outline-offset: 2px; }
+  ::selection { background: rgba(230,83,58,0.18); }
+  input[type=range] { -webkit-appearance: none; appearance: none; height: 26px; background: transparent; }
+  input[type=range]::-webkit-slider-runnable-track { height: 6px; border-radius: 3px; background: #E9E6E0; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; margin-top: -8px; border-radius: 50%; background: #FFFFFF; border: 2px solid #171717; cursor: pointer; }
+  @keyframes aera-in { from { opacity: 0; transform: translateY(6px); } }
+</style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;gap:22px;padding:44px 24px 64px">
+
+  <div style="display:flex;align-items:center;gap:18px;width:390px">
+    <span style="font-size:18px;font-weight:700;letter-spacing:0.16em">AERA</span>
+    <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.45)">{{ screenLabel }}</span>
+    <button type="button" onClick="{{ reset }}" style="margin-left:auto;appearance:none;cursor:pointer;background:transparent;border:1px solid rgba(23,23,23,0.2);border-radius:8px;font-family:inherit;font-size:12px;font-weight:600;color:rgba(23,23,23,0.6);padding:8px 12px" style-hover="background:#FFFFFF">Restart demo</button>
+  </div>
+
+  <div style="width:390px;height:844px;flex:none;background:#F7F5F1;border-radius:40px;border:1px solid rgba(23,23,23,0.14);overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 18px 44px rgba(23,23,23,0.12)">
+
+    <div style="height:46px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:600;color:{{ statusColor }};position:relative;z-index:2"><span>9:41</span><span>ᯤ  ⏻</span></div>
+
+    <sc-if value="{{ isLanding }}" hint-placeholder-val="{{ true }}">
+      <div style="flex:1;min-height:0;position:relative;display:flex;flex-direction:column">
+        <div style="position:absolute;inset:-46px 0 auto;height:520px">
+          <image-slot id="aera-proto-hero" shape="rect" fit="cover" placeholder="LANDING_HERO"></image-slot>
+        </div>
+        <div style="position:absolute;inset:-46px 0 0;background:linear-gradient(180deg,rgba(23,23,23,0.4) 0%,rgba(23,23,23,0.08) 32%,rgba(247,245,241,0.92) 56%,#F7F5F1 66%);pointer-events:none"></div>
+        <div style="position:relative;padding:8px 26px 26px;display:flex;flex-direction:column;gap:18px;flex:1">
+          <span style="font-size:19px;font-weight:700;letter-spacing:0.16em;color:#FFFFFF">AERA</span>
+          <div style="margin-top:auto;display:flex;flex-direction:column;gap:18px">
+            <h3 style="margin:0;font-size:38px;line-height:1.05;letter-spacing:-0.03em;font-weight:700;max-width:14ch;text-wrap:pretty">Understand your body. Become your best.</h3>
+            <p style="margin:0;font-size:16px;line-height:1.55;color:rgba(23,23,23,0.7);max-width:32ch">Your personal AI coach for fitness, nutrition, recovery and long-term progress.</p>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <button type="button" onClick="{{ toSignup }}" style="appearance:none;border:none;cursor:pointer;background:#E6533A;color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#C7412B">Start Your Journey</button>
+              <button type="button" onClick="{{ toHome }}" style="appearance:none;cursor:pointer;background:transparent;color:#171717;border:1px solid rgba(23,23,23,0.2);font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#EDEAE4">Skip to the app</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isSignup }}">
+      <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 24px 26px;display:flex;flex-direction:column;gap:22px">
+        <button type="button" onClick="{{ back }}" style="appearance:none;border:none;background:none;cursor:pointer;font-size:22px;color:rgba(23,23,23,0.6);padding:0;width:max-content">←</button>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <h3 style="margin:0;font-size:32px;line-height:1.1;letter-spacing:-0.025em;font-weight:700;max-width:16ch">Three fields, then your plan.</h3>
+          <span style="font-size:15px;color:rgba(23,23,23,0.6)">Onboarding takes about four minutes.</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">First name</span>
+            <input type="text" value="{{ name }}" onChange="{{ onName }}" style="appearance:none;font-family:inherit;font-size:16px;color:#171717;background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:15px 16px;min-height:52px">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Email</span>
+            <input type="text" value="george@example.com" style="appearance:none;font-family:inherit;font-size:16px;color:#171717;background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:15px 16px;min-height:52px">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Password</span>
+            <input type="password" value="aeraaera" style="appearance:none;font-family:inherit;font-size:16px;color:#171717;background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:15px 16px;min-height:52px">
+          </div>
+        </div>
+        <button type="button" onClick="{{ toGoal }}" style="appearance:none;border:none;cursor:pointer;background:#E6533A;color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#C7412B">Create Account</button>
+        <span style="font-size:13px;line-height:1.5;color:rgba(23,23,23,0.5)">Your measurements and photos stay private to your account.</span>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isGoal }}">
+      <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 24px 26px;display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;align-items:center;gap:14px">
+          <button type="button" onClick="{{ back }}" style="appearance:none;border:none;background:none;cursor:pointer;font-size:22px;color:rgba(23,23,23,0.6);padding:0">←</button>
+          <div style="flex:1;height:3px;background:#E9E6E0;border-radius:2px"><div style="width:20%;height:100%;background:#171717;border-radius:2px"></div></div>
+          <span style="font-size:13px;font-weight:600;color:rgba(23,23,23,0.5)">2/10</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <h3 style="margin:0;font-size:32px;line-height:1.1;letter-spacing:-0.025em;font-weight:700;max-width:16ch">What do you want to achieve?</h3>
+          <span style="font-size:15px;color:rgba(23,23,23,0.6)">Tap one. AERA builds the plan around it.</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <sc-for list="{{ goals }}" as="g" hint-placeholder-count="6">
+            <button type="button" onClick="{{ g.pick }}" style="{{ g.style }}">{{ g.label }}</button>
+          </sc-for>
+        </div>
+        <div style="margin-top:auto;display:flex;flex-direction:column;gap:8px">
+          <button type="button" onClick="{{ toPlan }}" style="appearance:none;border:none;cursor:pointer;background:#E6533A;color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#C7412B">Continue</button>
+          <span style="font-size:13px;color:rgba(23,23,23,0.45);text-align:center">Steps 3–9 are skipped in this demo.</span>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isPlan }}">
+      <div style="flex:1;overflow-y:auto;min-height:0;padding:14px 24px 26px;display:flex;flex-direction:column;gap:24px;background:#24463A">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.6)">Your AERA plan</span>
+        <h3 style="margin:0;font-size:34px;line-height:1.08;letter-spacing:-0.025em;font-weight:700;color:#FFFFFF;max-width:16ch">{{ planHeadline }}</h3>
+        <div style="display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,0.16);flex:none">
+          <div style="background:#24463A;padding:15px 2px;display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:14px;color:rgba(255,255,255,0.65)">Primary goal</span><span style="font-size:16px;font-weight:600;color:#FFFFFF">{{ goal }}</span></div>
+          <div style="background:#24463A;padding:15px 2px;display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:14px;color:rgba(255,255,255,0.65)">Current weight</span><span style="font-size:16px;font-weight:600;color:#FFFFFF">84.2 kg</span></div>
+          <div style="background:#24463A;padding:15px 2px;display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:14px;color:rgba(255,255,255,0.65)">Training</span><span style="font-size:16px;font-weight:600;color:#FFFFFF">4 days · dumbbells</span></div>
+          <div style="background:#24463A;padding:15px 2px;display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:14px;color:rgba(255,255,255,0.65)">Nutrition</span><span style="font-size:16px;font-weight:600;color:#FFFFFF">2,240 kcal · 170 g P</span></div>
+        </div>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.75)">A starting point. AERA adjusts it from your check-ins, sessions and measurements.</p>
+        <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px">
+          <button type="button" onClick="{{ toHome }}" style="appearance:none;border:none;cursor:pointer;background:#FFFFFF;color:#171717;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#EDEAE4">Meet Your Coach</button>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isHome }}">
+      <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 20px 0;display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <h3 style="margin:0;font-size:29px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">Good morning, {{ name }}</h3>
+            <span style="font-size:15px;color:rgba(23,23,23,0.6)">Here's your plan for today.</span>
+          </div>
+          <button type="button" onClick="{{ toYou }}" style="appearance:none;border:none;cursor:pointer;width:38px;height:38px;flex:none;border-radius:50%;background:#E9E6E0;font-family:inherit;font-size:14px;font-weight:600">{{ initial }}</button>
+        </div>
+        <div style="flex:none;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden">
+          <div style="background:#FFFFFF;padding:13px 12px;display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Weight</span><span style="font-size:19px;font-weight:700;letter-spacing:-0.02em">{{ weight }}<span style="font-size:12px;font-weight:600;color:rgba(23,23,23,0.45)"> kg</span></span><span style="font-size:11px;font-weight:600;color:#2F6146">↓ 0.2 wk</span></div>
+          <div style="background:#FFFFFF;padding:13px 12px;display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Sleep</span><span style="font-size:19px;font-weight:700;letter-spacing:-0.02em">7h 12m</span><span style="font-size:11px;font-weight:600;color:#4E626B">↑ 21m</span></div>
+          <div style="background:#FFFFFF;padding:13px 12px;display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Energy</span><span style="font-size:19px;font-weight:700;letter-spacing:-0.02em">{{ energy }}<span style="font-size:12px;font-weight:600;color:rgba(23,23,23,0.45)">/10</span></span><span style="font-size:11px;color:rgba(23,23,23,0.5)">{{ energyNote }}</span></div>
+          <div style="background:#FFFFFF;padding:13px 12px;display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Recovery</span><span style="font-size:19px;font-weight:700;letter-spacing:-0.02em">{{ recovery }}%</span><span style="font-size:11px;font-weight:600;color:#2F6146">{{ recoveryNote }}</span></div>
+          <div style="background:#FFFFFF;padding:13px 12px;display:flex;flex-direction:column;gap:5px;grid-column:span 2"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Steps</span><span style="font-size:19px;font-weight:700;letter-spacing:-0.02em">4,821 <span style="font-size:12px;font-weight:600;color:rgba(23,23,23,0.45)">/ 8,000</span></span><div style="height:4px;background:#E9E6E0;border-radius:2px;overflow:hidden"><div style="width:60%;height:100%;background:#24463A"></div></div></div>
+        </div>
+        <div style="flex:none;background:#24463A;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px">
+          <span style="font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.6)">AERA Insight</span>
+          <p style="margin:0;font-size:16px;line-height:1.5;color:#FFFFFF">{{ insight }}</p>
+          <button type="button" onClick="{{ toCoach }}" style="appearance:none;border:none;cursor:pointer;width:max-content;background:#FFFFFF;color:#171717;font-family:inherit;font-size:14px;font-weight:600;padding:12px 18px;border-radius:8px;min-height:44px" style-hover="background:#EDEAE4">Ask AERA</button>
+        </div>
+        <div style="flex:none;background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden;display:flex">
+          <div style="width:104px;flex:none;position:relative"><image-slot id="aera-proto-training" shape="rect" fit="cover" placeholder="HOME_HERO_WORKOUT"></image-slot></div>
+          <div style="flex:1;padding:16px;display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#24463A">Training</span>
+            <span style="font-size:19px;font-weight:700;letter-spacing:-0.02em">Upper Body</span>
+            <span style="font-size:13px;color:rgba(23,23,23,0.6)">45 min · 5 exercises</span>
+            <button type="button" onClick="{{ toSession }}" style="appearance:none;border:none;cursor:pointer;margin-top:2px;background:#E6533A;color:#FFFFFF;font-family:inherit;font-size:14px;font-weight:600;padding:12px 16px;border-radius:8px;min-height:44px;transition:background 180ms ease" style-hover="background:#C7412B">Start Workout</button>
+          </div>
+        </div>
+        <button type="button" onClick="{{ toNutrition }}" style="appearance:none;cursor:pointer;text-align:left;flex:none;background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:16px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-family:inherit" style-hover="background:#FDFCFB">
+          <span style="display:flex;flex-direction:column;gap:6px">
+            <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#B24A34">Nutrition</span>
+            <span style="font-size:19px;font-weight:700;letter-spacing:-0.02em">{{ kcalLeft }} kcal left</span>
+            <span style="font-size:13px;color:rgba(23,23,23,0.6)">Protein {{ protein }} / 170 g</span>
+          </span>
+          <span style="font-size:14px;font-weight:600;color:#B24A34;flex:none">View →</span>
+        </button>
+        <sc-if value="{{ needsCheckin }}" hint-placeholder-val="{{ true }}">
+          <div style="flex:none;background:#E9E6E0;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:12px;margin-bottom:20px">
+            <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.55)">Daily check-in</span>
+            <span style="font-size:18px;font-weight:600">How are you feeling today?</span>
+            <button type="button" onClick="{{ toCheckin }}" style="appearance:none;border:none;cursor:pointer;width:max-content;background:#171717;color:#FFFFFF;font-family:inherit;font-size:14px;font-weight:600;padding:12px 18px;border-radius:8px;min-height:44px">Start Check-in</button>
+          </div>
+        </sc-if>
+        <sc-if value="{{ checkedIn }}">
+          <div style="flex:none;background:#FFFFFF;border:1px solid rgba(63,125,90,0.35);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px;margin-bottom:20px">
+            <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#2F6146">Check-in saved</span>
+            <span style="font-size:14px;line-height:1.5;color:rgba(23,23,23,0.75)">{{ checkinReading }}</span>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isCheckin }}">
+      <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 22px 26px;display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <button type="button" onClick="{{ toHome }}" style="appearance:none;border:none;background:none;cursor:pointer;font-size:20px;color:rgba(23,23,23,0.6);padding:0">✕</button>
+          <span style="font-size:13px;font-weight:600;color:rgba(23,23,23,0.5)">Under 30 seconds</span>
+        </div>
+        <h3 style="margin:0;font-size:30px;line-height:1.1;letter-spacing:-0.025em;font-weight:700;max-width:18ch">How are you feeling today?</h3>
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:15px;font-weight:600">Energy</span><span style="font-size:14px;color:rgba(23,23,23,0.55)">{{ energy }} / 10</span></div>
+            <input type="range" min="1" max="10" value="{{ energy }}" onChange="{{ onEnergy }}" style="width:100%">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:15px;font-weight:600">Sleep quality</span><span style="font-size:14px;color:rgba(23,23,23,0.55)">{{ sleep }} / 10</span></div>
+            <input type="range" min="1" max="10" value="{{ sleep }}" onChange="{{ onSleep }}" style="width:100%">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:15px;font-weight:600">Stress</span><span style="font-size:14px;color:rgba(23,23,23,0.55)">{{ stress }} / 10</span></div>
+            <input type="range" min="1" max="10" value="{{ stress }}" onChange="{{ onStress }}" style="width:100%">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:15px;font-weight:600">Soreness</span><span style="font-size:14px;color:rgba(23,23,23,0.55)">{{ soreness }} / 10</span></div>
+            <input type="range" min="1" max="10" value="{{ soreness }}" onChange="{{ onSoreness }}" style="width:100%">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Weight</span>
+            <input type="text" value="{{ weight }}" onChange="{{ onWeight }}" style="appearance:none;font-family:inherit;font-size:16px;font-weight:500;color:#171717;background:#FFFFFF;border:1px solid rgba(23,23,23,0.14);border-radius:8px;padding:14px 16px;min-height:50px">
+          </div>
+        </div>
+        <div style="background:#E9E6E0;border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:5px">
+          <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.55)">Live reading</span>
+          <span style="font-size:14px;line-height:1.5;color:rgba(23,23,23,0.72)">Recovery {{ recovery }}% — {{ checkinReading }}</span>
+        </div>
+        <button type="button" onClick="{{ saveCheckin }}" style="margin-top:auto;appearance:none;border:none;cursor:pointer;background:#E6533A;color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#C7412B">Save Check-in</button>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isCoach }}">
+      <div style="flex:none;padding:6px 22px 14px;border-bottom:1px solid rgba(23,23,23,0.1);display:flex;flex-direction:column;gap:2px">
+        <span style="font-size:20px;font-weight:700;letter-spacing:0.14em">AERA</span>
+        <span style="font-size:14px;color:rgba(23,23,23,0.6)">Your personal coach.</span>
+      </div>
+      <div style="flex:1;overflow-y:auto;min-height:0;padding:16px 20px;display:flex;flex-direction:column;gap:12px">
+        <sc-for list="{{ msgs }}" as="m" hint-placeholder-count="3">
+          <div style="{{ m.wrap }}"><div style="{{ m.bubble }}">{{ m.text }}</div></div>
+        </sc-for>
+      </div>
+      <div style="flex:none;padding:0 20px 12px;display:flex;gap:8px;flex-wrap:wrap">
+        <sc-for list="{{ prompts }}" as="p" hint-placeholder-count="3">
+          <button type="button" onClick="{{ p.ask }}" style="appearance:none;cursor:pointer;background:#EDEAE4;border:none;border-radius:20px;font-family:inherit;font-size:13px;font-weight:500;padding:10px 14px;min-height:40px;color:rgba(23,23,23,0.75)" style-hover="background:#E2DDD5">{{ p.label }}</button>
+        </sc-for>
+      </div>
+      <div style="flex:none;background:#FFFFFF;border-top:1px solid rgba(23,23,23,0.1);padding:12px 16px 22px;display:flex;gap:10px;align-items:center">
+        <input type="text" placeholder="Ask AERA anything" value="{{ draft }}" onChange="{{ onDraft }}" style="flex:1;appearance:none;font-family:inherit;font-size:15px;color:#171717;background:#F7F5F1;border:1px solid rgba(23,23,23,0.12);border-radius:22px;padding:13px 16px;min-height:46px">
+        <button type="button" onClick="{{ send }}" style="appearance:none;border:none;cursor:pointer;background:#E6533A;color:#FFFFFF;font-family:inherit;font-size:15px;font-weight:600;width:46px;height:46px;border-radius:50%;flex:none;transition:background 180ms ease" style-hover="background:#C7412B">↑</button>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isTraining }}">
+      <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 20px 0;display:flex;flex-direction:column;gap:16px">
+        <h3 style="margin:0;font-size:29px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">Training</h3>
+        <div style="flex:none;background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column">
+          <div style="height:140px;position:relative"><image-slot id="aera-proto-tr-hero" shape="rect" fit="cover" placeholder="TRAINING_DUMBBELL_ROW"></image-slot></div>
+          <div style="padding:18px;display:flex;flex-direction:column;gap:12px">
+            <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#24463A">{{ sessionStatus }}</span>
+            <span style="font-size:24px;font-weight:700;letter-spacing:-0.02em">Upper Body</span>
+            <span style="font-size:14px;color:rgba(23,23,23,0.6)">45 min · 5 exercises · Dumbbells</span>
+            <button type="button" onClick="{{ toSession }}" style="appearance:none;border:none;cursor:pointer;background:#E6533A;color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:15px;border-radius:8px;min-height:50px;transition:background 180ms ease" style-hover="background:#C7412B">{{ sessionCta }}</button>
+          </div>
+        </div>
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Exercises</span>
+        <div style="flex:none;display:flex;flex-direction:column;gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden">
+          <sc-for list="{{ exercises }}" as="e" hint-placeholder-count="5">
+            <div style="background:#FFFFFF;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px">
+              <div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:16px;font-weight:600">{{ e.name }}</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">{{ e.scheme }} · {{ e.target }}</span></div>
+              <span style="{{ e.badge }}">{{ e.state }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="flex:none;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden;margin-bottom:20px">
+          <div style="background:#FFFFFF;padding:16px;display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Streak</span><span style="font-size:22px;font-weight:700;letter-spacing:-0.02em">6 weeks</span></div>
+          <div style="background:#FFFFFF;padding:16px;display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Volume</span><span style="font-size:22px;font-weight:700;letter-spacing:-0.02em">+8%</span></div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isSession }}">
+      <div style="flex:1;overflow-y:auto;min-height:0;display:flex;flex-direction:column;background:#171717">
+        <div style="flex:none;padding:4px 22px 14px;display:flex;align-items:center;justify-content:space-between">
+          <button type="button" onClick="{{ toTraining }}" style="appearance:none;border:none;background:none;cursor:pointer;font-size:20px;color:rgba(255,255,255,0.7);padding:0">✕</button>
+          <div style="flex:1;margin:0 16px;height:3px;background:rgba(255,255,255,0.18);border-radius:2px"><div style="width:{{ sessionPct }};height:100%;background:#E6533A;border-radius:2px;transition:width 240ms ease"></div></div>
+          <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.7)">{{ exCounter }}</span>
+        </div>
+        <div style="flex:none;height:300px;position:relative">
+          <image-slot id="aera-proto-session" shape="rect" fit="cover" placeholder="TRAINING_SHOULDER_PRESS · video"></image-slot>
+          <div style="position:absolute;inset:auto 0 0;padding:14px 22px;background:linear-gradient(180deg,rgba(23,23,23,0) 0%,rgba(23,23,23,0.75) 100%);pointer-events:none;display:flex;justify-content:space-between;align-items:flex-end"><span style="font-size:13px;font-weight:600;color:#FFFFFF">{{ cue }}</span><span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.75)">▶ 8s loop</span></div>
+        </div>
+        <div style="flex:1;padding:22px;display:flex;flex-direction:column;gap:18px">
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55)">{{ exKicker }}</span>
+            <span style="font-size:27px;font-weight:700;letter-spacing:-0.025em;color:#FFFFFF">{{ exName }}</span>
+          </div>
+          <div style="flex:none;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.16)">
+            <div style="background:#171717;padding:14px 2px;display:flex;flex-direction:column;gap:4px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Set</span><span style="font-size:20px;font-weight:700;color:#FFFFFF">{{ setCounter }}</span></div>
+            <div style="background:#171717;padding:14px 2px;display:flex;flex-direction:column;gap:4px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Reps</span><span style="font-size:20px;font-weight:700;color:#FFFFFF">{{ reps }}</span></div>
+            <div style="background:#171717;padding:14px 2px;display:flex;flex-direction:column;gap:4px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Load</span><span style="font-size:20px;font-weight:700;color:#FFFFFF">{{ load }}</span></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.08);border-radius:12px;padding:16px 18px">
+            <span style="font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#FFFFFF">{{ restLabel }}</span>
+            <span style="font-size:14px;color:rgba(255,255,255,0.6)">Rest between sets</span>
+          </div>
+          <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px">
+            <button type="button" onClick="{{ completeSet }}" style="appearance:none;border:none;cursor:pointer;background:#E6533A;color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:17px;border-radius:8px;min-height:54px;transition:background 180ms ease" style-hover="background:#C7412B">Complete Set</button>
+            <div style="display:flex;gap:10px">
+              <button type="button" onClick="{{ skipExercise }}" style="appearance:none;cursor:pointer;flex:1;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,0.3);font-family:inherit;font-size:15px;font-weight:600;padding:14px;border-radius:8px;min-height:48px" style-hover="background:rgba(255,255,255,0.1)">Skip exercise</button>
+              <button type="button" onClick="{{ finishSession }}" style="appearance:none;cursor:pointer;flex:1;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,0.3);font-family:inherit;font-size:15px;font-weight:600;padding:14px;border-radius:8px;min-height:48px" style-hover="background:rgba(255,255,255,0.1)">End session</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isDone }}">
+      <div style="flex:1;overflow-y:auto;min-height:0;padding:20px 24px 26px;display:flex;flex-direction:column;gap:22px">
+        <span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#2F6146">Session complete</span>
+        <h3 style="margin:0;font-size:32px;line-height:1.1;letter-spacing:-0.025em;font-weight:700;max-width:16ch">{{ doneHeadline }}</h3>
+        <div style="flex:none;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden">
+          <div style="background:#FFFFFF;padding:16px 12px;display:flex;flex-direction:column;gap:4px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Sets</span><span style="font-size:20px;font-weight:700">{{ setsDone }}</span></div>
+          <div style="background:#FFFFFF;padding:16px 12px;display:flex;flex-direction:column;gap:4px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Time</span><span style="font-size:20px;font-weight:700">42 min</span></div>
+          <div style="background:#FFFFFF;padding:16px 12px;display:flex;flex-direction:column;gap:4px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Streak</span><span style="font-size:20px;font-weight:700">7 wk</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span style="font-size:16px;font-weight:600">How did it feel?</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <sc-for list="{{ feels }}" as="f" hint-placeholder-count="5">
+              <button type="button" onClick="{{ f.pick }}" style="{{ f.style }}">{{ f.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="flex:none;background:#24463A;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px">
+          <span style="font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.6)">AERA</span>
+          <p style="margin:0;font-size:16px;line-height:1.5;color:#FFFFFF">{{ feelReply }}</p>
+        </div>
+        <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px">
+          <button type="button" onClick="{{ toNutrition }}" style="appearance:none;border:none;cursor:pointer;background:#E6533A;color:#FFFFFF;font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px;transition:background 180ms ease" style-hover="background:#C7412B">What should I eat now?</button>
+          <button type="button" onClick="{{ toHome }}" style="appearance:none;cursor:pointer;background:#FFFFFF;color:#171717;border:1px solid rgba(23,23,23,0.16);font-family:inherit;font-size:16px;font-weight:600;padding:16px;border-radius:8px;min-height:52px" style-hover="background:#EDEAE4">Back to Home</button>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isNutrition }}">
+      <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 20px 0;display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between"><h3 style="margin:0;font-size:29px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">Nutrition</h3><span style="font-size:14px;color:rgba(23,23,23,0.5)">{{ mealsLogged }} meals logged</span></div>
+        <div style="flex:none;background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:20px;display:flex;align-items:center;gap:20px">
+          <div style="position:relative;width:96px;height:96px;flex:none">
+            <svg viewBox="0 0 100 100" style="width:96px;height:96px;transform:rotate(-90deg)">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="#E9E6E0" stroke-width="9"></circle>
+              <circle cx="50" cy="50" r="42" fill="none" stroke="#E6533A" stroke-width="9" stroke-linecap="round" stroke-dasharray="264" stroke-dashoffset="{{ ringOffset }}" style="transition:stroke-dashoffset 420ms cubic-bezier(0.22,1,0.36,1)"></circle>
+            </svg>
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:19px;font-weight:700;letter-spacing:-0.02em">{{ kcal }}</span><span style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(23,23,23,0.5)">of 2,240</span></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;flex-direction:column;gap:5px"><div style="display:flex;justify-content:space-between"><span style="font-size:13px;font-weight:600">Protein</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">{{ protein }} / 170 g</span></div><div style="height:4px;background:#E9E6E0;border-radius:2px"><div style="width:{{ proteinPct }};height:100%;background:#24463A;border-radius:2px;transition:width 320ms ease"></div></div></div>
+            <div style="display:flex;flex-direction:column;gap:5px"><div style="display:flex;justify-content:space-between"><span style="font-size:13px;font-weight:600">Carbs</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">96 / 220 g</span></div><div style="height:4px;background:#E9E6E0;border-radius:2px"><div style="width:44%;height:100%;background:#D9C7AA;border-radius:2px"></div></div></div>
+            <div style="display:flex;flex-direction:column;gap:5px"><div style="display:flex;justify-content:space-between"><span style="font-size:13px;font-weight:600">Fat</span><span style="font-size:13px;color:rgba(23,23,23,0.55)">34 / 72 g</span></div><div style="height:4px;background:#E9E6E0;border-radius:2px"><div style="width:47%;height:100%;background:#8FA99A;border-radius:2px"></div></div></div>
+          </div>
+        </div>
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Today</span>
+        <div style="flex:none;background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden;display:flex">
+          <div style="width:100px;flex:none;position:relative"><image-slot id="aera-proto-breakfast" shape="rect" fit="cover" placeholder="NUTRITION_BREAKFAST_01"></image-slot></div>
+          <div style="flex:1;padding:14px 16px;display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Breakfast · logged</span><span style="font-size:17px;font-weight:600">Eggs, pita &amp; yogurt</span><span style="font-size:13px;color:rgba(23,23,23,0.6)">460 kcal · 32 g P</span></div>
+        </div>
+        <div style="flex:none;background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden;display:flex">
+          <div style="width:100px;flex:none;position:relative"><image-slot id="aera-proto-lunch" shape="rect" fit="cover" placeholder="NUTRITION_LUNCH_01"></image-slot></div>
+          <div style="flex:1;padding:14px 16px;display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Lunch · logged</span><span style="font-size:17px;font-weight:600">Chicken &amp; tomato bowl</span><span style="font-size:13px;color:rgba(23,23,23,0.6)">600 kcal · 56 g P</span></div>
+        </div>
+        <sc-if value="{{ dinnerOpen }}" hint-placeholder-val="{{ true }}">
+          <div style="flex:none;border:1px dashed rgba(23,23,23,0.22);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:10px;margin-bottom:20px">
+            <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Dinner · suggested</span>
+            <span style="font-size:17px;font-weight:600">Salmon, rice &amp; greens</span>
+            <span style="font-size:13px;color:rgba(23,23,23,0.6)">680 kcal · 48 g P · 20 min</span>
+            <button type="button" onClick="{{ useMeal }}" style="appearance:none;border:none;cursor:pointer;width:max-content;background:#E6533A;color:#FFFFFF;font-family:inherit;font-size:14px;font-weight:600;padding:12px 16px;border-radius:8px;min-height:44px;transition:background 180ms ease" style-hover="background:#C7412B">Use This Meal</button>
+          </div>
+        </sc-if>
+        <sc-if value="{{ dinnerLogged }}">
+          <div style="flex:none;background:#FFFFFF;border:1px solid rgba(63,125,90,0.35);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:6px;margin-bottom:20px">
+            <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#2F6146">Dinner · logged</span>
+            <span style="font-size:17px;font-weight:600">Salmon, rice &amp; greens</span>
+            <span style="font-size:13px;color:rgba(23,23,23,0.6)">Protein target reached for today.</span>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isYou }}">
+      <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 20px 0;display:flex;flex-direction:column;gap:16px">
+        <h3 style="margin:0;font-size:29px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">You</h3>
+        <div style="flex:none;background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:18px;display:flex;align-items:center;gap:16px">
+          <span style="width:52px;height:52px;flex:none;border-radius:50%;background:#E9E6E0;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600">{{ initial }}</span>
+          <div style="flex:1;display:flex;flex-direction:column;gap:3px"><span style="font-size:18px;font-weight:600">{{ name }}</span><span style="font-size:14px;color:rgba(23,23,23,0.6)">34 · 170 cm · {{ goal }}</span></div>
+        </div>
+        <div style="flex:none;display:flex;flex-direction:column;gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden">
+          <button type="button" onClick="{{ toProgress }}" style="appearance:none;cursor:pointer;text-align:left;font-family:inherit;background:#FFFFFF;border:none;padding:16px;display:flex;justify-content:space-between;align-items:center" style-hover="background:#FDFCFB"><span style="font-size:16px">Progress &amp; charts</span><span style="font-size:15px;color:rgba(23,23,23,0.5)">›</span></button>
+          <button type="button" onClick="{{ toWeekly }}" style="appearance:none;cursor:pointer;text-align:left;font-family:inherit;background:#FFFFFF;border:none;padding:16px;display:flex;justify-content:space-between;align-items:center" style-hover="background:#FDFCFB"><span style="font-size:16px">Weekly Review</span><span style="font-size:15px;color:rgba(23,23,23,0.5)">Week 32 ›</span></button>
+          <div style="background:#FFFFFF;padding:16px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:16px">Measurements</span><span style="font-size:15px;color:rgba(23,23,23,0.5)">7 tracked ›</span></div>
+          <div style="background:#FFFFFF;padding:16px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:16px">Body composition</span><span style="font-size:11px;font-weight:600;padding:5px 9px;border-radius:5px;background:rgba(23,23,23,0.06);color:rgba(23,23,23,0.6)">Estimated</span></div>
+          <div style="background:#FFFFFF;padding:16px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:16px">AERA Health</span><span style="font-size:15px;color:rgba(23,23,23,0.5)">›</span></div>
+          <div style="background:#FFFFFF;padding:16px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:16px">Settings</span><span style="font-size:15px;color:rgba(23,23,23,0.5)">›</span></div>
+        </div>
+        <button type="button" onClick="{{ reset }}" style="appearance:none;cursor:pointer;flex:none;margin-bottom:20px;background:#FFFFFF;color:#171717;border:1px solid rgba(23,23,23,0.16);font-family:inherit;font-size:15px;font-weight:600;padding:15px;border-radius:8px;min-height:50px" style-hover="background:#EDEAE4">Reset Demo Data</button>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isProgress }}">
+      <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 20px 0;display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;align-items:center;gap:14px">
+          <button type="button" onClick="{{ toYou }}" style="appearance:none;border:none;background:none;cursor:pointer;font-size:22px;color:rgba(23,23,23,0.6);padding:0">←</button>
+          <h3 style="margin:0;font-size:26px;line-height:1.1;letter-spacing:-0.02em;font-weight:700">Progress</h3>
+        </div>
+        <div style="display:flex;gap:16px;border-bottom:1px solid rgba(23,23,23,0.12)">
+          <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
+            <button type="button" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button>
+          </sc-for>
+        </div>
+        <div style="flex:none;background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;align-items:baseline;justify-content:space-between"><div style="display:flex;align-items:baseline;gap:10px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em">{{ tabValue }}</span><span style="font-size:14px;font-weight:600;color:#2F6146">{{ tabDelta }}</span></div><span style="font-size:12px;color:rgba(23,23,23,0.5)">3 months</span></div>
+          <svg viewBox="0 0 300 120" style="width:100%;height:120px" preserveAspectRatio="none">
+            <line x1="0" y1="8" x2="300" y2="8" stroke="rgba(23,23,23,0.08)"></line>
+            <line x1="0" y1="60" x2="300" y2="60" stroke="rgba(23,23,23,0.08)"></line>
+            <line x1="0" y1="112" x2="300" y2="112" stroke="rgba(23,23,23,0.08)"></line>
+            <polyline points="{{ tabPoints }}" fill="none" stroke="{{ tabColor }}" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"></polyline>
+          </svg>
+          <span style="font-size:14px;line-height:1.5;color:rgba(23,23,23,0.65)">{{ tabNote }}</span>
+        </div>
+        <div style="flex:none;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(23,23,23,0.12);border:1px solid rgba(23,23,23,0.12);border-radius:12px;overflow:hidden">
+          <div style="background:#FFFFFF;padding:16px;display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Waist</span><span style="font-size:20px;font-weight:700;letter-spacing:-0.02em">95.2 cm</span><span style="font-size:12px;font-weight:600;color:#2F6146">↓ 2.8 cm</span></div>
+          <div style="background:#FFFFFF;padding:16px;display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Body fat</span><span style="font-size:20px;font-weight:700;letter-spacing:-0.02em">21.4%</span><span style="font-size:11px;font-weight:600;padding:4px 8px;border-radius:5px;background:rgba(23,23,23,0.06);color:rgba(23,23,23,0.6);width:max-content">Estimated</span></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-bottom:20px">
+          <div style="flex:1;aspect-ratio:3/4;border-radius:12px;overflow:hidden;position:relative"><image-slot id="aera-proto-prog-a" shape="rect" fit="cover" placeholder="May"></image-slot></div>
+          <div style="flex:1;aspect-ratio:3/4;border-radius:12px;overflow:hidden;position:relative"><image-slot id="aera-proto-prog-b" shape="rect" fit="cover" placeholder="Aug"></image-slot></div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isWeekly }}">
+      <div style="flex:1;overflow-y:auto;min-height:0;padding:6px 22px 26px;display:flex;flex-direction:column;gap:18px">
+        <div style="display:flex;align-items:center;gap:14px">
+          <button type="button" onClick="{{ toYou }}" style="appearance:none;border:none;background:none;cursor:pointer;font-size:22px;color:rgba(23,23,23,0.6);padding:0">←</button>
+          <span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Week 32 · 12–18 Aug</span>
+        </div>
+        <h3 style="margin:0;font-size:30px;line-height:1.1;letter-spacing:-0.025em;font-weight:700">A steady week.</h3>
+        <div style="display:flex;flex-direction:column">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(23,23,23,0.12)"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Body</span><span style="font-size:16px;font-weight:600">84.0 → 83.4 kg</span></div>
+          <div style="display:flex;align-items:baseline;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(23,23,23,0.12)"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Waist</span><span style="font-size:16px;font-weight:600">96 → 95.2 cm</span></div>
+          <div style="display:flex;align-items:baseline;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(23,23,23,0.12)"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Training</span><span style="font-size:16px;font-weight:600">{{ weeklyTraining }}</span></div>
+          <div style="display:flex;align-items:baseline;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(23,23,23,0.12)"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Nutrition</span><span style="font-size:16px;font-weight:600">89% adherence</span></div>
+          <div style="display:flex;align-items:baseline;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(23,23,23,0.12)"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Sleep</span><span style="font-size:16px;font-weight:600">6h 51m average</span></div>
+        </div>
+        <div style="flex:none;background:#24463A;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px">
+          <span style="font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.6)">AERA says</span>
+          <p style="margin:0;font-size:16px;line-height:1.5;color:#FFFFFF">Consistency is strong. Weight is moving steadily while performance stays stable. Sleep is the one lever left.</p>
+        </div>
+        <div style="flex:none;background:#FFFFFF;border:1px solid rgba(23,23,23,0.12);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:8px">
+          <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.5)">Recommendation</span>
+          <span style="font-size:17px;font-weight:600;line-height:1.4">Keep the current plan for another week.</span>
+        </div>
+        <div style="margin-top:auto;display:flex;gap:10px">
+          <button type="button" onClick="{{ toHome }}" style="appearance:none;border:none;cursor:pointer;flex:1;background:#E6533A;color:#FFFFFF;font-family:inherit;font-size:15px;font-weight:600;padding:15px;border-radius:8px;min-height:50px;transition:background 180ms ease" style-hover="background:#C7412B">Keep plan</button>
+          <button type="button" onClick="{{ toCoach }}" style="appearance:none;cursor:pointer;flex:1;background:#FFFFFF;color:#171717;border:1px solid rgba(23,23,23,0.16);font-family:inherit;font-size:15px;font-weight:600;padding:15px;border-radius:8px;min-height:50px" style-hover="background:#EDEAE4">Discuss with AERA</button>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ showNav }}" hint-placeholder-val="{{ true }}">
+      <div style="flex:none;background:#FFFFFF;border-top:1px solid rgba(23,23,23,0.1);padding:10px 8px 20px;display:flex;justify-content:space-around">
+        <button type="button" onClick="{{ toHome }}" style="appearance:none;border:none;background:none;cursor:pointer;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;border-radius:5px;background:{{ navHome }}"></span><span style="font-size:11px;font-weight:600;color:{{ navHomeText }}">Home</span></button>
+        <button type="button" onClick="{{ toCoach }}" style="appearance:none;border:none;background:none;cursor:pointer;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;border-radius:5px;background:{{ navCoach }}"></span><span style="font-size:11px;font-weight:600;color:{{ navCoachText }}">Coach</span></button>
+        <button type="button" onClick="{{ toTraining }}" style="appearance:none;border:none;background:none;cursor:pointer;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;border-radius:5px;background:{{ navTraining }}"></span><span style="font-size:11px;font-weight:600;color:{{ navTrainingText }}">Training</span></button>
+        <button type="button" onClick="{{ toNutrition }}" style="appearance:none;border:none;background:none;cursor:pointer;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;border-radius:5px;background:{{ navNutrition }}"></span><span style="font-size:11px;font-weight:600;color:{{ navNutritionText }}">Nutrition</span></button>
+        <button type="button" onClick="{{ toYou }}" style="appearance:none;border:none;background:none;cursor:pointer;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:56px;min-height:44px"><span style="width:22px;height:22px;border-radius:5px;background:{{ navYou }}"></span><span style="font-size:11px;font-weight:600;color:{{ navYouText }}">You</span></button>
+      </div>
+    </sc-if>
+
+  </div>
+
+  <div style="width:390px;display:flex;flex-direction:column;gap:8px">
+    <span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(23,23,23,0.45)">Try this</span>
+    <span style="font-size:14px;line-height:1.6;color:rgba(23,23,23,0.62)">Start Your Journey → pick a goal → Home. Then run the check-in sliders, complete sets in the workout, log the suggested dinner, and switch the Progress tabs. Every number you change flows through to Home.</span>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: 470, &quot;height&quot;: 1000}
+}">
+const GOALS = ['Lose fat', 'Build muscle', 'Get stronger', 'Improve fitness', 'Maintain weight', 'Body recomposition'];
+const HEADLINES = {
+  'Lose fat': 'Fat loss first, muscle kept.',
+  'Build muscle': 'Muscle first, waist held.',
+  'Get stronger': 'Strength first, weight steady.',
+  'Improve fitness': 'Capacity first, week by week.',
+  'Maintain weight': 'Hold the line, build quality.',
+  'Body recomposition': 'Leaner and stronger at once.'
+};
+const EXERCISES = [
+  { name: 'Push-up', scheme: '3 × 12', target: 'chest, triceps', sets: 3, reps: '12', load: 'Body', cue: 'Elbows 45°, ribs down' },
+  { name: 'Dumbbell Row', scheme: '3 × 10', target: 'back, biceps', sets: 3, reps: '10', load: '16 kg', cue: 'Flat back, pull to the hip' },
+  { name: 'Shoulder Press', scheme: '3 × 10', target: 'shoulders', sets: 3, reps: '10', load: '14 kg', cue: 'Press to lockout, no arch' },
+  { name: 'Biceps Curl', scheme: '2 × 12', target: 'biceps', sets: 2, reps: '12', load: '12 kg', cue: 'Elbows still, slow down' },
+  { name: 'Plank', scheme: '3 × 45s', target: 'core', sets: 3, reps: '45s', load: '—', cue: 'Glutes tight, hips level' }
+];
+const FEELS = ['Very easy', 'Easy', 'Moderate', 'Hard', 'Very hard'];
+const FEEL_REPLY = {
+  'Very easy': 'Too easy — I\'ll add a rep range and 2 kg on the presses next session.',
+  'Easy': 'Good sign. I\'ll nudge the load up slightly next time.',
+  'Moderate': 'That is the target zone. Same load next session, one extra set on rows.',
+  'Hard': 'Noted. I\'ll hold the load and add a minute of rest between sets.',
+  'Very hard': 'I\'ll drop volume 15% next session and check your sleep first.'
+};
+const TABS = {
+  weight: { label: 'Weight', value: '84.2 kg', delta: '−2.4 kg', color: '#24463A', points: '0,18 40,26 80,24 120,44 160,50 200,62 240,76 300,92', note: 'Steady loss of about 0.45 kg per week. Timeframe: 3 months.' },
+  waist: { label: 'Waist', value: '95.2 cm', delta: '−2.8 cm', color: '#6F8792', points: '0,14 50,22 100,30 150,44 200,56 250,68 300,80', note: 'Waist is falling faster than weight — that is body composition changing.' },
+  strength: { label: 'Strength', value: '16 kg × 10', delta: '+2 kg', color: '#E6533A', points: '0,96 50,88 100,88 150,70 200,62 250,50 300,42', note: 'Row load is up while weight comes down. Muscle is being kept.' }
+};
+const btn = (active) => 'appearance:none;cursor:pointer;font-family:inherit;text-align:left;border-radius:10px;padding:15px 20px;min-height:52px;font-size:16px;display:flex;align-items:center;justify-content:space-between;' +
+  (active ? 'background:#171717;color:#FFFFFF;border:1px solid #171717;font-weight:600' : 'background:#FFFFFF;color:#171717;border:1px solid rgba(23,23,23,0.12);font-weight:500');
+const chip = (active) => 'appearance:none;cursor:pointer;font-family:inherit;border-radius:8px;padding:12px 16px;min-height:46px;font-size:15px;' +
+  (active ? 'background:#171717;color:#FFFFFF;border:none;font-weight:600' : 'background:#FFFFFF;color:#171717;border:1px solid rgba(23,23,23,0.14);font-weight:500');
+
+class Component extends DCLogic {
+  state = {
+    screen: 'landing', prev: 'landing', name: 'George', goal: 'Lose fat',
+    energy: 7, sleep: 6, stress: 4, soreness: 5, weight: '84.2', checkedIn: false,
+    exIdx: 0, setIdx: 1, setsDone: 0, sessionDone: false, feel: 'Moderate',
+    kcal: 1060, protein: 88, mealsLogged: 2, dinnerLogged: false,
+    tab: 'weight', draft: '',
+    msgs: [
+      { role: 'me', text: 'My legs are sore. Should I still train today?' },
+      { role: 'aera', text: 'Soreness is mostly quads from Tuesday. Recovery is fine, so keep today\'s upper body and move legs to Friday.' }
+    ]
+  };
+
+  go = (screen) => this.setState((s) => ({ prev: s.screen, screen }));
+
+  recovery() {
+    const { energy, sleep, stress, soreness } = this.state;
+    const raw = (energy * 1.2 + sleep * 1.3 - stress * 0.5 - soreness * 0.5) * 8 + 26;
+    return Math.max(38, Math.min(96, Math.round(raw)));
+  }
+
+  reading() {
+    const r = this.recovery();
+    if (r >= 80) return 'recovery is good, train as planned.';
+    if (r >= 62) return 'recovery is moderate — keep the session but stop two reps short of failure.';
+    return 'recovery is low. I moved today toward light training and a walk.';
+  }
+
+  ask = (q) => {
+    const reply = q.indexOf('eat') > -1
+      ? 'You have ' + (2240 - this.state.kcal) + ' kcal and ' + (170 - this.state.protein) + ' g of protein left. Salmon with rice and greens covers both.'
+      : q.indexOf('time') > -1
+        ? 'Then do rows, presses and plank — 18 minutes, same stimulus, we skip the accessories.'
+        : q.indexOf('stall') > -1 || q.indexOf('stopped') > -1
+          ? 'Weight is flat for 9 days but waist is down 0.6 cm. That is water and a real change underneath. No adjustment yet.'
+          : 'Recovery is ' + this.recovery() + '% today, so the planned session stands. I\'ll check in again after it.';
+    this.setState((s) => ({ msgs: s.msgs.concat([{ role: 'me', text: q }, { role: 'aera', text: reply }]), draft: '' }));
+  };
+
+  completeSet = () => this.setState((s) => {
+    const ex = EXERCISES[s.exIdx];
+    if (s.setIdx < ex.sets) return { setIdx: s.setIdx + 1, setsDone: s.setsDone + 1 };
+    if (s.exIdx < EXERCISES.length - 1) return { exIdx: s.exIdx + 1, setIdx: 1, setsDone: s.setsDone + 1 };
+    return { screen: 'done', prev: 'session', setsDone: s.setsDone + 1, sessionDone: true };
+  });
+
+  renderVals() {
+    const s = this.state;
+    const rec = this.recovery();
+    const ex = EXERCISES[s.exIdx];
+    const totalSets = EXERCISES.reduce((n, e) => n + e.sets, 0);
+    const nav = (on) => (on ? '#171717' : 'rgba(23,23,23,0.22)');
+    const navT = (on) => (on ? '#171717' : 'rgba(23,23,23,0.55)');
+    const labels = { landing: 'Landing', signup: 'Create account', goal: 'Onboarding · goal', plan: 'Initial plan', home: 'Home', checkin: 'Daily check-in', coach: 'Coach', training: 'Training', session: 'Active workout', done: 'Session complete', nutrition: 'Nutrition', you: 'Profile', progress: 'Progress', weekly: 'Weekly review' };
+    const isYouArea = s.screen === 'you' || s.screen === 'progress';
+    return {
+      screenLabel: labels[s.screen] || s.screen,
+      statusColor: (s.screen === 'session' || s.screen === 'plan' || s.screen === 'landing') ? '#FFFFFF' : '#171717',
+      isLanding: s.screen === 'landing', isSignup: s.screen === 'signup', isGoal: s.screen === 'goal', isPlan: s.screen === 'plan',
+      isHome: s.screen === 'home', isCheckin: s.screen === 'checkin', isCoach: s.screen === 'coach', isTraining: s.screen === 'training',
+      isSession: s.screen === 'session', isDone: s.screen === 'done', isNutrition: s.screen === 'nutrition', isYou: s.screen === 'you',
+      isProgress: s.screen === 'progress', isWeekly: s.screen === 'weekly',
+      showNav: ['home', 'coach', 'training', 'nutrition', 'you', 'progress'].indexOf(s.screen) > -1,
+
+      name: s.name, initial: (s.name || 'G').charAt(0).toUpperCase(), goal: s.goal, planHeadline: HEADLINES[s.goal],
+      onName: (e) => this.setState({ name: e.target.value }),
+      goals: GOALS.map((g) => ({ label: g, style: btn(g === s.goal), pick: () => this.setState({ goal: g }) })),
+
+      toSignup: () => this.go('signup'), toGoal: () => this.go('goal'), toPlan: () => this.go('plan'),
+      toHome: () => this.go('home'), toCheckin: () => this.go('checkin'), toCoach: () => this.go('coach'),
+      toTraining: () => this.go('training'), toSession: () => this.go('session'), toNutrition: () => this.go('nutrition'),
+      toYou: () => this.go('you'), toProgress: () => this.go('progress'), toWeekly: () => this.go('weekly'),
+      back: () => this.go(s.prev),
+      reset: () => this.setState({ screen: 'landing', prev: 'landing', checkedIn: false, exIdx: 0, setIdx: 1, setsDone: 0, sessionDone: false, kcal: 1060, protein: 88, mealsLogged: 2, dinnerLogged: false, energy: 7, sleep: 6, stress: 4, soreness: 5, weight: '84.2', tab: 'weight', goal: 'Lose fat' }),
+
+      energy: s.energy, sleep: s.sleep, stress: s.stress, soreness: s.soreness, weight: s.weight,
+      onEnergy: (e) => this.setState({ energy: Number(e.target.value) }),
+      onSleep: (e) => this.setState({ sleep: Number(e.target.value) }),
+      onStress: (e) => this.setState({ stress: Number(e.target.value) }),
+      onSoreness: (e) => this.setState({ soreness: Number(e.target.value) }),
+      onWeight: (e) => this.setState({ weight: e.target.value }),
+      recovery: rec, recoveryNote: rec >= 80 ? 'Good' : rec >= 62 ? 'Moderate' : 'Low',
+      recoveryColor: rec >= 80 ? '#2F6146' : rec >= 62 ? '#8A6329' : '#B9433D',
+      energyNote: s.energy >= 7 ? 'Steady' : s.energy >= 5 ? 'Average' : 'Low',
+      checkedIn: s.checkedIn, needsCheckin: !s.checkedIn, checkinReading: this.reading(),
+      saveCheckin: () => this.setState({ checkedIn: true, screen: 'home', prev: 'checkin' }),
+      insight: s.checkedIn
+        ? 'Recovery reads ' + rec + '% from today\'s check-in — ' + this.reading()
+        : 'Weight is trending down while session volume holds steady. Check in and I\'ll tune today\'s session.',
+
+      msgs: s.msgs.map((m) => ({
+        text: m.text,
+        wrap: 'display:flex;justify-content:' + (m.role === 'me' ? 'flex-end' : 'flex-start') + ';animation:aera-in 220ms ease both',
+        bubble: m.role === 'me'
+          ? 'background:#171717;color:#FFFFFF;font-size:15px;line-height:1.5;padding:13px 16px;border-radius:14px 14px 4px 14px;max-width:80%'
+          : 'background:#FFFFFF;border:1px solid rgba(23,23,23,0.1);color:#171717;font-size:15px;line-height:1.55;padding:14px 16px;border-radius:14px 14px 14px 4px;max-width:88%'
+      })),
+      prompts: ['What should I eat now?', 'I only have 20 minutes', 'Why has my weight stopped dropping?'].map((q) => ({ label: q, ask: () => this.ask(q) })),
+      draft: s.draft,
+      onDraft: (e) => this.setState({ draft: e.target.value }),
+      send: () => this.ask(s.draft && s.draft.trim() ? s.draft.trim() : 'What should I train today?'),
+
+      exercises: EXERCISES.map((e, i) => {
+        const done = s.sessionDone || i < s.exIdx;
+        const current = !s.sessionDone && i === s.exIdx;
+        return {
+          name: e.name, scheme: e.scheme, target: e.target,
+          state: done ? 'Done' : current ? 'Now' : 'Planned',
+          badge: 'font-size:12px;font-weight:600;padding:6px 10px;border-radius:6px;flex:none;' + (done
+            ? 'background:rgba(63,125,90,0.12);color:#2F6146'
+            : current ? 'background:#171717;color:#FFFFFF' : 'background:rgba(23,23,23,0.06);color:rgba(23,23,23,0.55)')
+        };
+      }),
+      sessionStatus: s.sessionDone ? 'Completed today' : 'Today · day 3 of 4',
+      sessionCta: s.sessionDone ? 'Review session' : s.setsDone > 0 ? 'Resume Workout' : 'Start Workout',
+      exName: ex.name, exKicker: 'Exercise ' + (s.exIdx + 1) + ' · ' + ex.target, cue: ex.cue,
+      reps: ex.reps, load: ex.load, setCounter: s.setIdx + ' / ' + ex.sets,
+      exCounter: (s.exIdx + 1) + '/' + EXERCISES.length,
+      sessionPct: Math.round((s.setsDone / totalSets) * 100) + '%',
+      restLabel: s.setsDone === 0 ? '—' : '1:15',
+      completeSet: this.completeSet,
+      skipExercise: () => this.setState((st) => (st.exIdx < EXERCISES.length - 1 ? { exIdx: st.exIdx + 1, setIdx: 1 } : { screen: 'done', prev: 'session', sessionDone: true })),
+      finishSession: () => this.setState({ screen: 'done', prev: 'session', sessionDone: true }),
+      setsDone: s.setsDone + ' / ' + totalSets,
+      doneHeadline: s.setsDone >= totalSets ? 'Full session, done.' : 'Session logged.',
+      feels: FEELS.map((f) => ({ label: f, style: chip(f === s.feel), pick: () => this.setState({ feel: f }) })),
+      feelReply: FEEL_REPLY[s.feel],
+      weeklyTraining: s.sessionDone ? '4 / 4 completed' : '3 / 4 completed',
+
+      kcal: s.kcal.toLocaleString(), kcalLeft: (2240 - s.kcal).toLocaleString(), protein: s.protein,
+      ringOffset: Math.max(0, Math.round(264 - (s.kcal / 2240) * 264)),
+      proteinPct: Math.min(100, Math.round((s.protein / 170) * 100)) + '%',
+      mealsLogged: s.mealsLogged, dinnerOpen: !s.dinnerLogged, dinnerLogged: s.dinnerLogged,
+      useMeal: () => this.setState((st) => ({ dinnerLogged: true, kcal: st.kcal + 680, protein: st.protein + 48, mealsLogged: st.mealsLogged + 1 })),
+
+      tabs: Object.keys(TABS).map((k) => ({
+        label: TABS[k].label,
+        style: 'appearance:none;background:none;border:none;cursor:pointer;font-family:inherit;font-size:14px;padding:0 0 10px;' + (k === s.tab
+          ? 'font-weight:600;color:#171717;border-bottom:2px solid #171717'
+          : 'font-weight:500;color:rgba(23,23,23,0.55);border-bottom:2px solid transparent'),
+        pick: () => this.setState({ tab: k })
+      })),
+      tabValue: TABS[s.tab].value, tabDelta: TABS[s.tab].delta, tabPoints: TABS[s.tab].points, tabColor: TABS[s.tab].color, tabNote: TABS[s.tab].note,
+
+      navHome: nav(s.screen === 'home'), navHomeText: navT(s.screen === 'home'),
+      navCoach: nav(s.screen === 'coach'), navCoachText: navT(s.screen === 'coach'),
+      navTraining: nav(s.screen === 'training' || s.screen === 'session' || s.screen === 'done'), navTrainingText: navT(s.screen === 'training'),
+      navNutrition: nav(s.screen === 'nutrition'), navNutritionText: navT(s.screen === 'nutrition'),
+      navYou: nav(isYouArea), navYouText: navT(isYouArea)
+    };
+  }
+}
+</script>
+</body>
+</html>
