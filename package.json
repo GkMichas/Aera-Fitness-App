@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build --webpack",
+    "build:sites": "opennextjs-cloudflare build --skipWranglerConfigCheck",
     "start": "next start",
     "lint": "eslint .",
     "validate:training": "node scripts/validate-training-catalog.mjs",
@@ -14,20 +15,21 @@
     "test:nutrition": "node --experimental-strip-types scripts/test-nutrition.mts",
     "test:coach": "node --experimental-strip-types scripts/test-coach-engine.mts",
     "test:progress": "node --experimental-strip-types scripts/test-progress-engine.mts",
-    "test:health": "node --experimental-strip-types scripts/test-health-safety.mts"
-    ,"check:english": "node scripts/check-english-only.mjs"
-    ,"typecheck": "tsc --noEmit"
-    ,"test": "npm run validate:training && npm run test:training && npm run validate:nutrition && npm run test:nutrition && npm run validate:media && npm run test:coach && npm run test:progress && npm run test:health && npm run check:english"
+    "test:health": "node --experimental-strip-types scripts/test-health-safety.mts",
+    "check:english": "node scripts/check-english-only.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "pnpm run validate:training && pnpm run test:training && pnpm run validate:nutrition && pnpm run test:nutrition && pnpm run validate:media && pnpm run test:coach && pnpm run test:progress && pnpm run test:health && pnpm run check:english"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.7.0",
+    "@supabase/supabase-js": "^2.57.0",
+    "lucide-react": "^0.468.0",
     "next": "16.3.0",
     "react": "19.2.7",
-    "react-dom": "19.2.7",
-    "lucide-react": "^0.468.0",
-    "@supabase/ssr": "^0.7.0",
-    "@supabase/supabase-js": "^2.57.0"
+    "react-dom": "19.2.7"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.20.2",
     "@tailwindcss/postcss": "^4.3.0",
     "@types/node": "^22",
     "@types/react": "^19",
@@ -36,6 +38,7 @@
     "eslint-config-next": "16.3.0",
     "postcss": "^8.5.0",
     "tailwindcss": "^4.3.0",
-    "typescript": "^5.9.0"
+    "typescript": "^5.9.0",
+    "wrangler": "^4.124.0"
   }
 }
